@@ -1,0 +1,14 @@
+User-agent: *
+Allow: /
+
+# Allow crawling of all static assets
+Allow: /_next/static/
+Allow: /images/
+Allow: /icons/
+
+# Disallow admin areas (if any)
+Disallow: /admin/
+Disallow: /api/
+
+# Sitemap
+Sitemap: https://dazzlar.studio/sitemap.xml
