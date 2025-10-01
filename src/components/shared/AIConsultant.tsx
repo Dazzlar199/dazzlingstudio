@@ -115,7 +115,7 @@ const AIConsultant = memo(function AIConsultant({
         },
         body: JSON.stringify({
           messages: [...messages, userMessage].map(
-            ({ id: _, timestamp: __, ...msg }) => msg
+            ({ id: _id, timestamp: _timestamp, ...msg }) => msg
           ),
           consultantType,
         }),
