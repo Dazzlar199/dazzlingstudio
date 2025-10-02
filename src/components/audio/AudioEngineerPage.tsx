@@ -538,13 +538,6 @@ export default function AudioEngineerPage() {
                 메인
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
               </Link>
-              <Link
-                href="/dev"
-                className="text-gray-700 hover:text-yellow-600 transition-colors font-medium text-base relative group"
-              >
-                웹 개발
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-yellow-600 transition-all duration-300 group-hover:w-full"></span>
-              </Link>
               <a
                 href="#services"
                 className="text-gray-700 hover:text-yellow-600 transition-colors font-medium text-base relative group"

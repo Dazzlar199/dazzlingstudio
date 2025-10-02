@@ -210,12 +210,6 @@ export default function WebDeveloperPage() {
               >
                 메인
               </Link>
-              <Link
-                href="/music"
-                className="hover:text-green-400 transition-colors"
-              >
-                음악
-              </Link>
               <a
                 href="#skills"
                 className="hover:text-green-400 transition-colors"
