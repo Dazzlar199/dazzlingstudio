@@ -535,29 +535,27 @@ export default function WebDeveloperPage() {
                   {/* Image Display */}
                   {projects[activeProject].images && projects[activeProject].images.length > 1 ? (
                     <div className="relative">
-                      <div className="h-96 bg-gray-900 rounded-lg overflow-hidden">
-                        <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-green-400 scrollbar-track-gray-800">
-                          {!imageLoadError ? (
-                            <img
-                              src={currentProject.images[currentImageIndex]}
-                              alt={`${currentProject.title} 스크린샷 ${currentImageIndex + 1}`}
-                              className="w-full min-h-full object-contain object-top"
-                              loading="lazy"
-                              onLoad={() => setImageLoadError(false)}
-                              onError={() => {
-                                console.error('Image failed to load:', currentProject.images[currentImageIndex]);
-                                setImageLoadError(true);
-                              }}
-                            />
-                          ) : (
-                            <div className="w-full h-full bg-gray-900 rounded-lg flex items-center justify-center">
-                              <div className="text-center">
-                                <Globe className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                                <p className="text-gray-400">이미지를 불러올 수 없습니다</p>
-                              </div>
+                      <div className="h-96 bg-black rounded-lg overflow-hidden flex items-center justify-center">
+                        {!imageLoadError ? (
+                          <img
+                            src={currentProject.images[currentImageIndex]}
+                            alt={`${currentProject.title} 스크린샷 ${currentImageIndex + 1}`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                            onLoad={() => setImageLoadError(false)}
+                            onError={() => {
+                              console.error('Image failed to load:', currentProject.images[currentImageIndex]);
+                              setImageLoadError(true);
+                            }}
+                          />
+                        ) : (
+                          <div className="w-full h-full bg-gray-900 rounded-lg flex items-center justify-center">
+                            <div className="text-center">
+                              <Globe className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                              <p className="text-gray-400">이미지를 불러올 수 없습니다</p>
                             </div>
-                          )}
-                        </div>
+                          </div>
+                        )}
                       </div>
 
                       {/* Navigation Buttons */}
@@ -593,40 +591,38 @@ export default function WebDeveloperPage() {
                       </div>
                     </div>
                   ) : (
-                    <div className="h-96 bg-gray-900 rounded-lg overflow-hidden">
-                      <div className="h-full overflow-y-auto scrollbar-thin scrollbar-thumb-green-400 scrollbar-track-gray-800">
-                        {currentProject.images && currentProject.images[0] ? (
-                          <img
-                            src={currentProject.images[0]}
-                            alt={`${currentProject.title} 스크린샷`}
-                            className="w-full min-h-full object-contain object-top"
-                            loading="lazy"
-                            onError={(e) => {
-                              console.error('Image failed to load:', currentProject.images[0]);
-                              if (e.currentTarget.parentElement) {
-                                e.currentTarget.parentElement.innerHTML = `
-                                  <div class="w-full h-full bg-gray-900 rounded-lg flex items-center justify-center">
-                                    <div class="text-center">
-                                      <svg class="w-16 h-16 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9-3-9m-9 9a9 9 0 019-9"></path>
-                                      </svg>
-                                      <p class="text-gray-400">이미지를 불러올 수 없습니다</p>
-                                    </div>
+                    <div className="h-96 bg-black rounded-lg overflow-hidden flex items-center justify-center">
+                      {currentProject.images && currentProject.images[0] ? (
+                        <img
+                          src={currentProject.images[0]}
+                          alt={`${currentProject.title} 스크린샷`}
+                          className="w-full h-full object-cover"
+                          loading="lazy"
+                          onError={(e) => {
+                            console.error('Image failed to load:', currentProject.images[0]);
+                            if (e.currentTarget.parentElement) {
+                              e.currentTarget.parentElement.innerHTML = `
+                                <div class="w-full h-full bg-gray-900 rounded-lg flex items-center justify-center">
+                                  <div class="text-center">
+                                    <svg class="w-16 h-16 text-green-400 mx-auto mb-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 12a9 9 0 01-9 9m9-9a9 9 0 00-9-9m9 9c1.657 0 3-4.03 3-9s-1.343-9-3-9m0 18c-1.657 0-3-4.03-3-9s1.343-9-3-9m-9 9a9 9 0 019-9"></path>
+                                    </svg>
+                                    <p class="text-gray-400">이미지를 불러올 수 없습니다</p>
                                   </div>
-                                `;
-                              }
-                            }}
-                          />
-                        ) : (
-                          <div className="w-full h-full bg-gray-900 rounded-lg flex items-center justify-center">
-                            <div className="text-center">
-                              <Smartphone className="w-16 h-16 text-green-400 mx-auto mb-4" />
-                              <p className="text-gray-400">모바일 앱 프로젝트</p>
-                              <p className="text-gray-300 text-sm mt-2">개발 중인 프로젝트입니다</p>
-                            </div>
+                                </div>
+                              `;
+                            }
+                          }}
+                        />
+                      ) : (
+                        <div className="w-full h-full bg-gray-900 rounded-lg flex items-center justify-center">
+                          <div className="text-center">
+                            <Smartphone className="w-16 h-16 text-green-400 mx-auto mb-4" />
+                            <p className="text-gray-400">모바일 앱 프로젝트</p>
+                            <p className="text-gray-300 text-sm mt-2">개발 중인 프로젝트입니다</p>
                           </div>
-                        )}
-                      </div>
+                        </div>
+                      )}
                     </div>
                   )}
                 </div>
