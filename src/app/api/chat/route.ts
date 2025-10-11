@@ -1,19 +1,27 @@
 import { OpenAI } from 'openai';
 import { GENERAL_CONSULTANT_PROMPT, AUDIO_CONSULTANT_PROMPT, WEBDEV_CONSULTANT_PROMPT } from '@/utils/prompts';
 
-// 환경변수 검증
-if (!process.env.OPENAI_API_KEY) {
-  throw new Error('OPENAI_API_KEY is not configured. Please add it to your .env.local file.');
-}
-
-const openai = new OpenAI({
-  apiKey: process.env.OPENAI_API_KEY,
-});
-
 export const runtime = 'edge';
 
 export async function POST(req: Request) {
   try {
+    // 환경변수 검증 (런타임에만 체크)
+    if (!process.env.OPENAI_API_KEY) {
+      return new Response(
+        JSON.stringify({
+          error: 'AI 상담 서비스가 설정되지 않았습니다. 관리자에게 문의해주세요.'
+        }),
+        {
+          status: 503,
+          headers: { 'Content-Type': 'application/json' }
+        }
+      );
+    }
+
+    const openai = new OpenAI({
+      apiKey: process.env.OPENAI_API_KEY,
+    });
+
     const { messages, consultantType } = await req.json();
 
     // 상담사 타입에 따른 시스템 프롬프트 선택
