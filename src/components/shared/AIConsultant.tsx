@@ -69,10 +69,16 @@ const AIConsultant = memo(function AIConsultant({
   const [messages, setMessages] = useState<Message[]>([]);
   const [input, setInput] = useState("");
   const [isLoading, setIsLoading] = useState(false);
+  const [isMounted, setIsMounted] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const inputRef = useRef<HTMLInputElement>(null);
 
   const info = consultantInfo[consultantType];
+
+  // Only render on client side to avoid hydration mismatch
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   // 초기 인사 메시지 설정
   useEffect(() => {
@@ -212,6 +218,10 @@ const AIConsultant = memo(function AIConsultant({
       }
     }
   };
+
+  if (!isMounted) {
+    return null;
+  }
 
   if (!isOpen) {
     return (

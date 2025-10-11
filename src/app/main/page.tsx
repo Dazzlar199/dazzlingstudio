@@ -1,6 +1,6 @@
 'use client';
 
-import ModeSelector from '@/components/shared/ModeSelector';
+import ModeSelectorNew from '@/components/shared/ModeSelectorNew';
 import { useRouter } from 'next/navigation';
 
 export default function MainPage() {
@@ -14,5 +14,5 @@ export default function MainPage() {
     }
   };
 
-  return <ModeSelector onModeSelect={handleModeSelect} />;
+  return <ModeSelectorNew onModeSelect={handleModeSelect} />;
 }

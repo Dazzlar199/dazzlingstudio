@@ -9,6 +9,7 @@ import {
 } from "next/font/google";
 import "./globals.css";
 import { ThemeProvider } from "@/contexts/ThemeContext";
+import StructuredData from "@/components/shared/StructuredData";
 
 const inter = Inter({
   variable: "--font-sans",
@@ -51,6 +52,7 @@ const spaceGrotesk = Space_Grotesk({
 });
 
 export const metadata: Metadata = {
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dazzlingstudio.vercel.app'),
   title: "Dazzlar - Dazzling Music & AI CONTENTS STUDIO",
   description:
     "음악과 기술이 만나는 특별한 공간. 전문 음향 녹음 스튜디오와 웹 개발 서비스를 제공합니다.",
@@ -128,6 +130,7 @@ export default function RootLayout({
       <body
         className={`${inter.variable} ${jetBrainsMono.variable} ${orbitron.variable} ${poppins.variable} ${nunitoSans.variable} ${spaceGrotesk.variable} antialiased min-h-screen`}
       >
+        <StructuredData />
         <ThemeProvider>{children}</ThemeProvider>
       </body>
     </html>

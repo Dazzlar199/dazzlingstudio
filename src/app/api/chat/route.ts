@@ -1,6 +1,11 @@
 import { OpenAI } from 'openai';
 import { GENERAL_CONSULTANT_PROMPT, AUDIO_CONSULTANT_PROMPT, WEBDEV_CONSULTANT_PROMPT } from '@/utils/prompts';
 
+// 환경변수 검증
+if (!process.env.OPENAI_API_KEY) {
+  throw new Error('OPENAI_API_KEY is not configured. Please add it to your .env.local file.');
+}
+
 const openai = new OpenAI({
   apiKey: process.env.OPENAI_API_KEY,
 });
