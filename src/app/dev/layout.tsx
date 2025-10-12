@@ -22,7 +22,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "웹 개발 포트폴리오 | Dazzling Studio - Full Stack Developer",
     description: "React, Next.js, TypeScript를 활용한 풀스택 웹 개발 포트폴리오",
-    url: "https://dazzlingstudio.vercel.app/dev",
+    url: "https://dazzlar.dev/dev",
     siteName: "Dazzling Studio",
     images: [
       {
@@ -42,7 +42,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://dazzlingstudio.vercel.app/dev",
+    canonical: "https://dazzlar.dev/dev",
   },
 };
 

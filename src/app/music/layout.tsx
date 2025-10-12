@@ -23,7 +23,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "음향 엔지니어링 포트폴리오 | Dazzling Studio - Recording & Music Studio",
     description: "전문 음향 녹음, 믹싱, 마스터링 서비스. 축가 녹음, AI 음악 제작 전문",
-    url: "https://dazzlingstudio.vercel.app/music",
+    url: "https://dazzlar.dev/music",
     siteName: "Dazzling Studio",
     images: [
       {
@@ -43,7 +43,7 @@ export const metadata: Metadata = {
     images: ["/og-image.png"],
   },
   alternates: {
-    canonical: "https://dazzlingstudio.vercel.app/music",
+    canonical: "https://dazzlar.dev/music",
   },
 };
 

@@ -21,4 +21,4 @@ Disallow: /_next/data/
 Crawl-delay: 1
 
 # Sitemap location
-Sitemap: https://dazzlingstudio.vercel.app/sitemap.xml
+Sitemap: https://dazzlar.dev/sitemap.xml

@@ -4,8 +4,8 @@ export default function StructuredData() {
     "@type": "Organization",
     "name": "Dazzling Studio",
     "alternateName": "Dazzlar Studio",
-    "url": "https://dazzlingstudio.vercel.app",
-    "logo": "https://dazzlingstudio.vercel.app/web_image/share_logo.png",
+    "url": "https://dazzlar.dev",
+    "logo": "https://dazzlar.dev/web_image/share_logo.png",
     "description": "음악과 기술이 만나는 특별한 공간. 전문 음향 녹음 스튜디오와 웹 개발 서비스를 제공합니다.",
     "foundingDate": "2020",
     "founder": {
@@ -93,12 +93,12 @@ export default function StructuredData() {
     "@type": "WebPage",
     "name": "Dazzling Studio - Professional Audio Engineering & Web Development",
     "description": "음향 엔지니어링과 웹 개발을 제공하는 듀얼 포트폴리오",
-    "url": "https://dazzlingstudio.vercel.app",
+    "url": "https://dazzlar.dev",
     "inLanguage": "ko-KR",
     "isPartOf": {
       "@type": "WebSite",
       "name": "Dazzling Studio",
-      "url": "https://dazzlingstudio.vercel.app"
+      "url": "https://dazzlar.dev"
     }
   };
 
