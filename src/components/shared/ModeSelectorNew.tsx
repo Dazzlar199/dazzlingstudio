@@ -274,7 +274,7 @@ export default function ModeSelectorNew({ onModeSelect }: ModeSelectorProps) {
             {/* Logo circle */}
             <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-white/10 backdrop-blur-xl flex items-center justify-center shadow-2xl overflow-hidden">
               <img
-                src="/web_image/main_logo.png"
+                src="/web_image/main_logo2.png"
                 alt="Dazzling Studio Logo"
                 className="w-24 h-24 object-contain"
               />
