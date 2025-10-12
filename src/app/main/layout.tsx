@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Dazzlar Studio - 웹 개발 & 음향 엔지니어링 포트폴리오",
+  title: "Dazzling Studio - 웹 개발 & 음향 엔지니어링 포트폴리오",
   description:
     "음악과 기술이 만나는 특별한 공간. 웹 개발부터 음향 녹음까지, 풀스택 개발자이자 음향 엔지니어의 듀얼 포트폴리오.",
   keywords: [
@@ -19,16 +19,16 @@ export const metadata: Metadata = {
     "Dazzlar",
   ],
   openGraph: {
-    title: "Dazzlar Studio - 웹 개발 & 음향 엔지니어링 포트폴리오",
+    title: "Dazzling Studio - 웹 개발 & 음향 엔지니어링 포트폴리오",
     description: "음악과 기술이 만나는 특별한 공간",
     url: "https://dazzlingstudio.vercel.app/main",
-    siteName: "Dazzlar Studio",
+    siteName: "Dazzling Studio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Dazzlar Studio - 웹 개발 & 음향 엔지니어링",
+        alt: "Dazzling Studio - 웹 개발 & 음향 엔지니어링",
       },
     ],
     locale: "ko_KR",
@@ -36,7 +36,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dazzlar Studio - 웹 개발 & 음향 엔지니어링 포트폴리오",
+    title: "Dazzling Studio - 웹 개발 & 음향 엔지니어링 포트폴리오",
     description: "음악과 기술이 만나는 특별한 공간",
     images: ["/og-image.png"],
   },

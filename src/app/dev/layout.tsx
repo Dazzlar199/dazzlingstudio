@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "웹 개발 포트폴리오 | Dazzlar - Full Stack Developer",
+  title: "웹 개발 포트폴리오 | Dazzling Studio - Full Stack Developer",
   description:
     "React, Next.js, TypeScript를 활용한 풀스택 웹 개발 포트폴리오. AI 통합, 반응형 웹사이트, 모바일 앱 개발 전문.",
   keywords: [
@@ -20,16 +20,16 @@ export const metadata: Metadata = {
     "Dazzlar",
   ],
   openGraph: {
-    title: "웹 개발 포트폴리오 | Dazzlar - Full Stack Developer",
+    title: "웹 개발 포트폴리오 | Dazzling Studio - Full Stack Developer",
     description: "React, Next.js, TypeScript를 활용한 풀스택 웹 개발 포트폴리오",
     url: "https://dazzlingstudio.vercel.app/dev",
-    siteName: "Dazzlar Studio",
+    siteName: "Dazzling Studio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Dazzlar - 웹 개발 포트폴리오",
+        alt: "Dazzling Studio - 웹 개발 포트폴리오",
       },
     ],
     locale: "ko_KR",
@@ -37,7 +37,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "웹 개발 포트폴리오 | Dazzlar - Full Stack Developer",
+    title: "웹 개발 포트폴리오 | Dazzling Studio - Full Stack Developer",
     description: "React, Next.js, TypeScript를 활용한 풀스택 웹 개발 포트폴리오",
     images: ["/og-image.png"],
   },

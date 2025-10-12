@@ -53,7 +53,7 @@ const spaceGrotesk = Space_Grotesk({
 
 export const metadata: Metadata = {
   metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dazzlingstudio.vercel.app'),
-  title: "Dazzlar - Dazzling Music & AI CONTENTS STUDIO",
+  title: "Dazzling Studio - Music & AI CONTENTS STUDIO",
   description:
     "음악과 기술이 만나는 특별한 공간. 전문 음향 녹음 스튜디오와 웹 개발 서비스를 제공합니다.",
   keywords: [
@@ -67,25 +67,25 @@ export const metadata: Metadata = {
     "스튜디오",
     "Dazzlar",
   ],
-  authors: [{ name: "Dazzlar Studio" }],
-  creator: "Dazzlar",
-  publisher: "Dazzlar Studio",
+  authors: [{ name: "Dazzling Studio" }],
+  creator: "Dazzling Studio",
+  publisher: "Dazzling Studio",
   formatDetection: {
     email: false,
     address: false,
     telephone: false,
   },
   openGraph: {
-    title: "Dazzlar - Dazzling Music & AI CONTENTS STUDIO",
+    title: "Dazzling Studio - Music & AI CONTENTS STUDIO",
     description: "음악과 기술이 만나는 특별한 공간",
     url: "https://dazzlar.studio",
-    siteName: "Dazzlar Studio",
+    siteName: "Dazzling Studio",
     images: [
       {
         url: "/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Dazzlar Studio - 음악과 기술의 만남",
+        alt: "Dazzling Studio - 음악과 기술의 만남",
       },
     ],
     locale: "ko_KR",
@@ -93,7 +93,7 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "Dazzlar - Dazzling Music & AI CONTENTS STUDIO",
+    title: "Dazzling Studio - Music & AI CONTENTS STUDIO",
     description: "음악과 기술이 만나는 특별한 공간",
     images: ["/og-image.png"],
   },
