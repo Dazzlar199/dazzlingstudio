@@ -272,11 +272,12 @@ export default function ModeSelectorNew({ onModeSelect }: ModeSelectorProps) {
             />
 
             {/* Logo circle */}
-            <div className="relative w-24 h-24 rounded-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-white/10 backdrop-blur-xl flex items-center justify-center shadow-2xl">
-              <div className="text-center">
-                <Sparkles className="w-8 h-8 text-white mb-1 mx-auto" />
-                <p className="text-xs font-bold text-white font-[family-name:var(--font-space)]">DAZZLING</p>
-              </div>
+            <div className="relative w-32 h-32 rounded-full bg-gradient-to-br from-slate-900 via-slate-800 to-slate-900 border border-white/10 backdrop-blur-xl flex items-center justify-center shadow-2xl overflow-hidden">
+              <img
+                src="/web_image/main_logo.png"
+                alt="Dazzling Studio Logo"
+                className="w-24 h-24 object-contain"
+              />
             </div>
           </motion.div>
         </div>

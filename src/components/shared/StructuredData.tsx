@@ -5,7 +5,7 @@ export default function StructuredData() {
     "name": "Dazzling Studio",
     "alternateName": "Dazzlar Studio",
     "url": "https://dazzlingstudio.vercel.app",
-    "logo": "https://dazzlingstudio.vercel.app/logo.png",
+    "logo": "https://dazzlingstudio.vercel.app/web_image/share_logo.png",
     "description": "음악과 기술이 만나는 특별한 공간. 전문 음향 녹음 스튜디오와 웹 개발 서비스를 제공합니다.",
     "foundingDate": "2020",
     "founder": {

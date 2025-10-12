@@ -82,7 +82,7 @@ export const metadata: Metadata = {
     siteName: "Dazzlar Studio",
     images: [
       {
-        url: "/og-image.jpg",
+        url: "/og-image.png",
         width: 1200,
         height: 630,
         alt: "Dazzlar Studio - 음악과 기술의 만남",
@@ -95,7 +95,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "Dazzlar - Dazzling Music & AI CONTENTS STUDIO",
     description: "음악과 기술이 만나는 특별한 공간",
-    images: ["/og-image.jpg"],
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
