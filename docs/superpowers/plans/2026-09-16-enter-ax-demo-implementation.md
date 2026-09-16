@@ -1451,14 +1451,14 @@ git push -u origin enter-ax-design
 
 Expected: the remote branch is created without modifying `main`.
 
-- [ ] **Step 4: Create a Vercel Preview deployment**
+- [x] **Step 4: Create a Vercel Preview deployment**
 
 Use the available Vercel MCP or the already linked GitHub integration to deploy `enter-ax-design` as Preview. Do not use a Production promotion command. If authentication is required, stop at the login handoff and request the user to complete it.
 
-- [ ] **Step 5: Verify the Preview**
+- [x] **Step 5: Verify the Preview**
 
 On the Preview URL, rerun the landing, talent, agency, AX, and content workflows. Check response headers, all internal routes, mobile and desktop layouts, and browser console errors.
 
-- [ ] **Step 6: Hand off the Preview for approval**
+- [x] **Step 6: Hand off the Preview for approval**
 
 Report the Preview URL, exact verification commands and results, any remaining demo limitations, and the commit SHA. Production promotion is a separate explicitly approved action after this checkpoint.
