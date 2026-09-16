@@ -1424,7 +1424,7 @@ git commit -m "test: verify Enter-AX end-to-end experience"
 - Consumes: a passing Task 11 repository
 - Produces: a Vercel Preview URL; does not promote to Production
 
-- [ ] **Step 1: Verify the branch and clean scope**
+- [x] **Step 1: Verify the branch and clean scope**
 
 Run:
 
@@ -1435,13 +1435,13 @@ git log --oneline --decorate origin/main..HEAD
 
 Expected: only the untracked user-owned `기획서.md` may remain; all application changes are committed on the feature branch.
 
-- [ ] **Step 2: Run the full gate one final time**
+- [x] **Step 2: Run the full gate one final time**
 
 Run: `npm run check:full`
 
 Expected: PASS with fresh output.
 
-- [ ] **Step 3: Push the feature branch**
+- [x] **Step 3: Push the feature branch**
 
 Run:
 
