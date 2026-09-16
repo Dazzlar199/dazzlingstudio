@@ -1139,7 +1139,7 @@ export interface AgentRunner {
 }
 ```
 
-- [ ] **Step 1: Write failing runner tests**
+- [x] **Step 1: Write failing runner tests**
 
 Create `src/features/hermes/runner.test.ts`:
 
@@ -1168,7 +1168,7 @@ describe("DemoAgentRunner", () => {
 });
 ```
 
-- [ ] **Step 2: Write a failing approval test**
+- [x] **Step 2: Write a failing approval test**
 
 Create `src/components/agency/AgentJobPanel.test.tsx`:
 
@@ -1186,7 +1186,7 @@ it.each([
 });
 ```
 
-- [ ] **Step 3: Verify test failure**
+- [x] **Step 3: Verify test failure**
 
 Run:
 
@@ -1196,7 +1196,7 @@ npm test -- src/features/hermes/runner.test.ts src/components/agency/AgentJobPan
 
 Expected: FAIL because the runner and panel do not exist.
 
-- [ ] **Step 4: Implement the Command Center**
+- [x] **Step 4: Implement the Command Center**
 
 Include operational totals, `오늘의 AX 브리핑`, automation cards, and agent jobs. Every job must show tenant, skill, created time, used tools, current step, result, approval status, and error/retry action. Simulated steps must use fictional tool labels such as `media.inspect.demo` rather than real API claims.
 
@@ -1204,7 +1204,7 @@ External-send and publish actions must stop at `사람 승인 대기` in the dem
 Approval-required jobs must provide `승인` and `거절`; failed jobs must provide `재시도` and `수동 처리`.
 The detail view must display fictional approval/audit entries, and must never show secrets or API keys.
 
-- [ ] **Step 5: Run tests and build**
+- [x] **Step 5: Run tests and build**
 
 Run:
 
@@ -1216,7 +1216,7 @@ npm run build
 
 Expected: PASS.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/features/hermes src/app/agency/ax src/components/agency/AgentJobPanel.tsx src/components/agency/AgentJobPanel.test.tsx

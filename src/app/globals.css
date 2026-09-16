@@ -464,6 +464,35 @@ button, a, input, select, textarea { outline-offset: 4px; }
 .candidate-card select { min-height: 40px; border: 1px solid var(--line-dark); background: #101215; color: white; padding: 7px; }
 @media (max-width: 640px) { .candidate-board { grid-template-columns: 1fr; overflow: visible; } .pipeline-column { min-height: 0; } }
 
+.ax-page { padding: clamp(26px, 5vw, 70px); }
+.ax-page > header { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 18px; }
+.ax-page > header p { width: 100%; color: var(--lime); font: 800 .72rem var(--font-mono); }
+.ax-page > header h1 { margin: 6px 0; font-size: clamp(3.3rem, 7vw, 7rem); letter-spacing: -.07em; line-height: .88; }
+.ax-metrics { display: grid; grid-template-columns: repeat(7, 1fr); margin-top: 42px; border: 1px solid var(--line-dark); }
+.ax-metrics article { display: grid; gap: 22px; border-right: 1px solid var(--line-dark); padding: 18px; }
+.ax-metrics article:last-child { border-right: 0; }
+.ax-metrics span { color: #b9beb7; font-size: .78rem; }
+.ax-metrics strong { font: 900 3rem var(--font-display); }
+.daily-brief { display: grid; grid-template-columns: .45fr 1fr; gap: 40px; margin-top: 18px; border-left: 9px solid var(--lime); background: #101215; padding: 28px; }
+.daily-brief h2 { margin: 15px 0 0; }
+.daily-brief > p { color: #c5cac3; line-height: 1.7; }
+.automation-grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 12px; margin: 18px 0; }
+.automation-grid article { min-height: 180px; border: 1px solid var(--line-dark); background: #101215; padding: 20px; }
+.automation-grid article > span { color: var(--lime); font: 800 .72rem var(--font-mono); }
+.agent-jobs { border: 1px solid var(--line-dark); }
+.agent-jobs > header { display: flex; justify-content: space-between; align-items: center; padding: 22px; }
+.agent-jobs > header p { margin: 0; color: var(--lime); font: 800 .7rem var(--font-mono); }
+.agent-jobs article { display: grid; grid-template-columns: .55fr 1fr auto; gap: 22px; align-items: center; border-top: 1px solid var(--line-dark); padding: 22px; background: #101215; }
+.agent-job__main h3 { margin: 14px 0 6px; font-size: 1.35rem; }
+.agent-job__main p { color: #b9beb7; }
+.agent-jobs dl { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; }
+.agent-jobs dl div { display: grid; gap: 4px; }
+.agent-jobs dt { color: #8f958e; font-size: .72rem; }
+.agent-jobs dd { margin: 0; font-size: .82rem; }
+.agent-job__actions { display: flex; gap: 8px; }
+@media (max-width: 1000px) { .ax-metrics { grid-template-columns: repeat(3, 1fr); } .automation-grid { grid-template-columns: repeat(2, 1fr); } .agent-jobs article { grid-template-columns: 1fr; } }
+@media (max-width: 640px) { .ax-metrics, .automation-grid, .daily-brief { grid-template-columns: 1fr; } }
+
 @media (max-width: 900px) {
   .site-header { grid-template-columns: auto 1fr; min-height: 118px; }
   .primary-nav {
