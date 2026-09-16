@@ -479,7 +479,7 @@ export interface DemoRepository {
 }
 ```
 
-- [ ] **Step 1: Write failing reducer tests**
+- [x] **Step 1: Write failing reducer tests**
 
 Create `src/features/demo/reducer.test.ts`:
 
@@ -524,13 +524,13 @@ describe("demoReducer", () => {
 });
 ```
 
-- [ ] **Step 2: Run the reducer test and verify failure**
+- [x] **Step 2: Run the reducer test and verify failure**
 
 Run: `npm test -- src/features/demo/reducer.test.ts`
 
 Expected: FAIL because fixtures and reducer do not exist.
 
-- [ ] **Step 3: Create coherent fictional fixtures**
+- [x] **Step 3: Create coherent fictional fixtures**
 
 `fixtures.ts` must export `demoState` with:
 
@@ -543,7 +543,7 @@ Expected: FAIL because fixtures and reducer do not exist.
 - Profile-view events for the talent dashboard and ISO timestamps for recent-activity sorting.
 - No real person, real company, real contact information, or claim of actual measured AI performance.
 
-- [ ] **Step 4: Implement the pure reducer and storage versioning**
+- [x] **Step 4: Implement the pure reducer and storage versioning**
 
 `storage.ts` must use the key `enter-ax-demo:v1`, verify the stored payload version, and return fixtures when parsing or validation fails. It must never serialize `File`, `Blob`, or object URLs.
 
@@ -551,7 +551,7 @@ Expected: FAIL because fixtures and reducer do not exist.
 The reducer must also cover role changes, privacy/contact-consent withdrawal, favorite saving, movement to
 internal review, duplicate active-offer prevention, agent rejection/retry/manual handling, and content-step changes.
 
-- [ ] **Step 5: Run tests**
+- [x] **Step 5: Run tests**
 
 Run:
 
@@ -562,7 +562,7 @@ npm run typecheck
 
 Expected: PASS.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/features/demo
