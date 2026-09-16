@@ -493,6 +493,26 @@ button, a, input, select, textarea { outline-offset: 4px; }
 @media (max-width: 1000px) { .ax-metrics { grid-template-columns: repeat(3, 1fr); } .automation-grid { grid-template-columns: repeat(2, 1fr); } .agent-jobs article { grid-template-columns: 1fr; } }
 @media (max-width: 640px) { .ax-metrics, .automation-grid, .daily-brief { grid-template-columns: 1fr; } }
 
+.content-workflow form > header p { color: var(--lime); font: 800 .72rem var(--font-mono); }
+.content-workflow form > header h1 { margin: 10px 0 34px; font-size: clamp(3.2rem, 7vw, 7rem); letter-spacing: -.07em; line-height: .9; }
+.content-brief { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-bottom: 20px; }
+.content-brief label, .content-brief fieldset { display: grid; gap: 8px; border: 1px solid var(--line-dark); padding: 16px; }
+.content-brief fieldset label { display: flex; border: 0; padding: 2px; }
+.content-brief input, .content-brief select { min-height: 44px; border: 1px solid var(--line-dark); background: var(--charcoal-soft); color: white; padding: 8px; }
+.content-results { margin-top: 32px; border-top: 8px solid var(--lime); background: #101215; padding: clamp(22px, 4vw, 42px); }
+.content-results > header { display: flex; justify-content: space-between; align-items: center; }
+.content-results h2 { margin: 16px 0 0; font-size: 2rem; }
+.clip-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; margin-top: 26px; }
+.clip-grid article { border: 1px solid var(--line-dark); padding: 14px; }
+.clip-poster { display: flex; aspect-ratio: 9 / 14; flex-direction: column; justify-content: space-between; background: var(--cobalt); padding: 18px; }
+.clip-poster strong { font: 900 3rem var(--font-display); }
+.copy-grid { display: grid; grid-template-columns: repeat(3, 1fr); margin-top: 16px; border: 1px solid var(--line-dark); }
+.copy-grid article { padding: 18px; border-right: 1px solid var(--line-dark); }
+.copy-grid article:last-child { border-right: 0; }
+.copy-grid p { color: #b9beb7; line-height: 1.6; }
+.content-approval { display: flex; justify-content: flex-end; flex-wrap: wrap; gap: 8px; margin-top: 20px; }
+@media (max-width: 700px) { .content-brief, .clip-grid, .copy-grid { grid-template-columns: 1fr; } .copy-grid article { border-right: 0; border-bottom: 1px solid var(--line-dark); } }
+
 @media (max-width: 900px) {
   .site-header { grid-template-columns: auto 1fr; min-height: 118px; }
   .primary-nav {

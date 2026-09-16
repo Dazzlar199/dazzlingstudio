@@ -1243,7 +1243,7 @@ git commit -m "feat: add Hermes-ready AX command center"
 // type ContentAction = "continue" | "request-changes" | "approve" | "reject" | "schedule";
 ```
 
-- [ ] **Step 1: Write failing workflow-state tests**
+- [x] **Step 1: Write failing workflow-state tests**
 
 Create `src/features/content/workflow.test.ts`:
 
@@ -1268,7 +1268,7 @@ it("rejects invalid transitions", () => {
 });
 ```
 
-- [ ] **Step 2: Write a failing component test**
+- [x] **Step 2: Write a failing component test**
 
 Create `src/components/agency/ContentWorkflow.test.tsx`. Fill inputs by their visible Korean labels,
 select `쇼츠` and `릴스`, choose `30초` and `9:16`, and submit `데모 초안 만들기`. Assert exactly
@@ -1285,7 +1285,7 @@ expect(screen.getByRole("button", { name: "수정 요청" })).toBeEnabled();
 expect(screen.getByRole("button", { name: "승인" })).toBeEnabled();
 ```
 
-- [ ] **Step 3: Verify test failure**
+- [x] **Step 3: Verify test failure**
 
 Run:
 
@@ -1295,11 +1295,11 @@ npm test -- src/features/content/workflow.test.ts src/components/agency/ContentW
 
 Expected: FAIL because workflow modules do not exist.
 
-- [ ] **Step 4: Implement the demo workflow**
+- [x] **Step 4: Implement the demo workflow**
 
 Use bundled lightweight demo posters and CSS timeline previews; do not render new videos. The final action must read `예약 배포 데모 완료` rather than claiming content was posted. Provide an edit path back to the brief and a rejection path that records a reason.
 
-- [ ] **Step 5: Run tests and build**
+- [x] **Step 5: Run tests and build**
 
 Run:
 
@@ -1311,7 +1311,7 @@ npm run build
 
 Expected: PASS.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/features/content src/app/agency/content src/components/agency/ContentWorkflow.tsx src/components/agency/ContentWorkflow.test.tsx
