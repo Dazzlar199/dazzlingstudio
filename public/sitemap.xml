@@ -1,35 +1,13 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
-  <!-- Main Landing Page -->
-  <url>
-    <loc>https://dazzlar.dev/</loc>
-    <lastmod>2025-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>1.0</priority>
-  </url>
-
-  <!-- Main Selection Page -->
-  <url>
-    <loc>https://dazzlar.dev/main</loc>
-    <lastmod>2025-10-11</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
-  </url>
-
-  <!-- Web Development Portfolio -->
-  <url>
-    <loc>https://dazzlar.dev/dev</loc>
-    <lastmod>2025-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
-  <!-- Audio Engineering Portfolio -->
-  <url>
-    <loc>https://dazzlar.dev/music</loc>
-    <lastmod>2025-10-11</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
-  </url>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/</loc></url>
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/talent</loc></url>
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/talent/onboarding</loc></url>
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/talent/profile</loc></url>
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/talent/offers</loc></url>
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/agency</loc></url>
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/agency/discover</loc></url>
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/agency/pipeline</loc></url>
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/agency/ax</loc></url>
+  <url><loc>https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/agency/content</loc></url>
 </urlset>

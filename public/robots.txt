@@ -1,24 +1,4 @@
-# Dazzling Studio - Robots.txt
 User-agent: *
 Allow: /
 
-# Allow crawling of main pages
-Allow: /main
-Allow: /dev
-Allow: /music
-
-# Allow crawling of static assets
-Allow: /_next/static/
-Allow: /web_image/
-Allow: /music/
-Allow: /studio_main/
-
-# Disallow API routes and private areas
-Disallow: /api/
-Disallow: /_next/data/
-
-# Crawl-delay for respectful crawling
-Crawl-delay: 1
-
-# Sitemap location
-Sitemap: https://dazzlar.dev/sitemap.xml
+Sitemap: https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app/sitemap.xml

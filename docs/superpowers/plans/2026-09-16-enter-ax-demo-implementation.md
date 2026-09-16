@@ -1352,7 +1352,7 @@ git commit -m "feat: add promotional content automation demo"
 - Consumes: all completed user flows
 - Produces: deployable, portfolio-free Enter-AX repository
 
-- [ ] **Step 1: Install Playwright and its Chromium runtime**
+- [x] **Step 1: Install Playwright and its Chromium runtime**
 
 Run:
 
@@ -1368,11 +1368,11 @@ Add scripts:
 "check:full": "npm run check && npm run test:e2e"
 ```
 
-- [ ] **Step 2: Configure Playwright**
+- [x] **Step 2: Configure Playwright**
 
 Create `playwright.config.ts` with `baseURL: "http://127.0.0.1:3000"`, Chromium desktop plus Pixel 7 and iPad Pro projects, retries set to `1` in CI and `0` locally, trace retained on first retry, and a `webServer` running `npm run dev`.
 
-- [ ] **Step 3: Write end-to-end tests before cleanup**
+- [x] **Step 3: Write end-to-end tests before cleanup**
 
 `landing.spec.ts` must verify the hero, both entry links, the demo disclosure, and the absence of Dazzling Studio text.
 
@@ -1380,19 +1380,19 @@ Create `playwright.config.ts` with `baseURL: "http://127.0.0.1:3000"`, Chromium 
 
 `agency-flow.spec.ts` must filter talent, open a profile, favorite it, create an offer, move a candidate, approve an agent job, retry a failed job, and complete the content workflow.
 
-- [ ] **Step 4: Run E2E and confirm the expected failures**
+- [x] **Step 4: Run E2E and confirm the expected failures**
 
 Run: `npm run test:e2e`
 
 Expected: at least the landing legacy-text assertion fails until old routes, metadata, and navigation are fully removed.
 
-- [ ] **Step 5: Remove all legacy portfolio code and assets**
+- [x] **Step 5: Remove all legacy portfolio code and assets**
 
 Use `git rm` only on the listed tracked paths. Do not touch `기획서.md`. Replace README content with Enter-AX purpose, demo limitations, local commands, test commands, data boundary, future Hermes boundary, and Vercel Preview process.
 
 Update sitemap routes to only the routes in the design spec. Update the manifest name, short name, description, colors, and icons to Enter-AX.
 
-- [ ] **Step 6: Run the full quality gate**
+- [x] **Step 6: Run the full quality gate**
 
 Run:
 
@@ -1402,11 +1402,11 @@ npm run check:full
 
 Expected: typecheck, lint, unit tests, production build, and all Playwright projects PASS.
 
-- [ ] **Step 7: Inspect responsive screenshots and console output**
+- [x] **Step 7: Inspect responsive screenshots and console output**
 
 Run the app and verify `/`, `/talent/onboarding`, `/agency/discover`, `/agency/pipeline`, `/agency/ax`, and `/agency/content` at 390×844, 1024×1366, and 1440×1000. Confirm no horizontal overflow, overlapping controls, unreadable contrast, uncaught console errors, or broken internal links.
 
-- [ ] **Step 8: Commit**
+- [x] **Step 8: Commit**
 
 ```bash
 git add package.json package-lock.json playwright.config.ts e2e README.md public src

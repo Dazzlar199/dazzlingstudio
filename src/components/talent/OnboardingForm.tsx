@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 import { validateTalentDraft } from "@/features/talent/validation";
 import type { TalentDraft, ValidationErrors } from "@/types/domain";
@@ -16,10 +16,13 @@ const blankDraft: TalentDraft = {
 };
 
 export function OnboardingForm({ onSave, initialStep = 1 }: { onSave: (draft: TalentDraft) => void; initialStep?: 1 | 2 | 3 | 4 }) {
+  const [hydrated, setHydrated] = useState(false);
   const [step, setStep] = useState(initialStep);
   const [draft, setDraft] = useState(blankDraft);
   const [requiredConsent, setRequiredConsent] = useState(false);
   const [errors, setErrors] = useState<ValidationErrors>({});
+
+  useEffect(() => setHydrated(true), []);
 
   function update<Key extends keyof TalentDraft>(key: Key, value: TalentDraft[Key]) {
     setDraft((current) => ({ ...current, [key]: value }));
@@ -41,14 +44,14 @@ export function OnboardingForm({ onSave, initialStep = 1 }: { onSave: (draft: Ta
         <header><p>STEP 0{step}</p><h1>{steps[step - 1]}</h1></header>
         {step === 1 ? (
           <div className="form-grid">
-            <label>이름 또는 활동명<input value={draft.stageName} onChange={(e) => update("stageName", e.target.value)} /></label>
-            <label>생년월일<input type="date" value={draft.birthDate} onChange={(e) => update("birthDate", e.target.value)} /></label>
-            <label>성별<select value={draft.gender} onChange={(e) => update("gender", e.target.value as TalentDraft["gender"])}><option value="undisclosed">선택 안 함</option><option value="woman">여성</option><option value="man">남성</option><option value="nonbinary">논바이너리</option></select></label>
-            <label>국적<input value={draft.nationality} onChange={(e) => update("nationality", e.target.value)} /></label>
-            <label>거주 지역<input value={draft.region} onChange={(e) => update("region", e.target.value)} /></label>
-            <fieldset><legend>지원 분야</legend>{(["idol", "vocal", "dance", "actor", "model"] as const).map((field) => <label key={field}><input type="checkbox" checked={draft.fields.includes(field)} onChange={(e) => update("fields", e.target.checked ? [...draft.fields, field] : draft.fields.filter((item) => item !== field))} /> {field}</label>)}</fieldset>
-            <label className="form-span">자기소개<textarea value={draft.bio} onChange={(e) => update("bio", e.target.value)} /></label>
-            <label className="form-span">SNS 링크 · 선택<input type="url" value={draft.socialUrl} onChange={(e) => update("socialUrl", e.target.value)} /></label>
+            <label>이름 또는 활동명<input disabled={!hydrated} value={draft.stageName} onChange={(e) => update("stageName", e.target.value)} /></label>
+            <label>생년월일<input disabled={!hydrated} type="date" value={draft.birthDate} onChange={(e) => update("birthDate", e.target.value)} /></label>
+            <label>성별<select disabled={!hydrated} value={draft.gender} onChange={(e) => update("gender", e.target.value as TalentDraft["gender"])}><option value="undisclosed">선택 안 함</option><option value="woman">여성</option><option value="man">남성</option><option value="nonbinary">논바이너리</option></select></label>
+            <label>국적<input disabled={!hydrated} value={draft.nationality} onChange={(e) => update("nationality", e.target.value)} /></label>
+            <label>거주 지역<input disabled={!hydrated} value={draft.region} onChange={(e) => update("region", e.target.value)} /></label>
+            <fieldset><legend>지원 분야</legend>{(["idol", "vocal", "dance", "actor", "model"] as const).map((field) => <label key={field}><input disabled={!hydrated} type="checkbox" checked={draft.fields.includes(field)} onChange={(e) => update("fields", e.target.checked ? [...draft.fields, field] : draft.fields.filter((item) => item !== field))} /> {field}</label>)}</fieldset>
+            <label className="form-span">자기소개<textarea disabled={!hydrated} value={draft.bio} onChange={(e) => update("bio", e.target.value)} /></label>
+            <label className="form-span">SNS 링크 · 선택<input disabled={!hydrated} type="url" value={draft.socialUrl} onChange={(e) => update("socialUrl", e.target.value)} /></label>
           </div>
         ) : null}
         {step === 2 ? <><PhotoTriptych onChange={(key, name) => update("photos", { ...draft.photos, [key]: name })} /><p className="privacy-notice">데모에서는 선택한 파일이 서버로 전송되거나 저장되지 않습니다. 새로고침하면 파일 선택이 사라집니다.</p></> : null}

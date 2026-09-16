@@ -1,5 +1,5 @@
 {
-  "name": "dual-portfolio",
+  "name": "enter-ax",
   "version": "0.1.0",
   "private": true,
   "type": "module",
@@ -11,6 +11,8 @@
     "typecheck": "tsc --noEmit",
     "test": "vitest run",
     "test:watch": "vitest",
+    "test:e2e": "playwright test",
+    "check:full": "npm run check && npm run test:e2e",
     "check": "npm run typecheck && npm run lint && npm run test && npm run build",
     "analyze": "ANALYZE=true npm run build",
     "build:production": "npm run lint && npm run build",
@@ -34,6 +36,7 @@
   "devDependencies": {
     "@eslint/eslintrc": "^3",
     "@next/bundle-analyzer": "^15.5.4",
+    "@playwright/test": "^1.63.0",
     "@tailwindcss/postcss": "^4",
     "@testing-library/dom": "^10.4.2",
     "@testing-library/jest-dom": "^6.9.1",
