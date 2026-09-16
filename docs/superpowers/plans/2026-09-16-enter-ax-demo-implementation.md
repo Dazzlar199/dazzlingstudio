@@ -743,7 +743,7 @@ git commit -m "feat: launch Enter-AX public experience"
 - Consumes: `TalentDraft`, `validateTalentDraft`, `parseYouTubeVideoId`, `useDemo().saveTalent`
 - Produces: `createObjectPreview(file: File): { url: string; revoke(): void }`
 
-- [ ] **Step 1: Write failing object-URL lifecycle tests**
+- [x] **Step 1: Write failing object-URL lifecycle tests**
 
 ```ts
 import { expect, it, vi } from "vitest";
@@ -760,7 +760,7 @@ it("revokes local preview URLs", () => {
 });
 ```
 
-- [ ] **Step 2: Write a failing form test**
+- [x] **Step 2: Write a failing form test**
 
 Create `src/components/talent/OnboardingForm.test.tsx`:
 
@@ -793,7 +793,7 @@ it("rejects a non-YouTube media URL", async () => {
 });
 ```
 
-- [ ] **Step 3: Run the targeted tests and verify failure**
+- [x] **Step 3: Run the targeted tests and verify failure**
 
 Run:
 
@@ -803,7 +803,7 @@ npm test -- src/features/talent/media.test.ts src/components/talent/OnboardingFo
 
 Expected: FAIL because media and form modules do not exist.
 
-- [ ] **Step 4: Implement the four-step registration experience**
+- [x] **Step 4: Implement the four-step registration experience**
 
 Steps must be:
 
@@ -821,7 +821,7 @@ The basic profile step must include the optional SNS URL and gender fields. Vali
 `image/jpeg`, `image/png`, `video/mp4`, or `video/webm`, show the accepted formats in the field help text,
 and reject other types before preview creation.
 
-- [ ] **Step 5: Run tests and build**
+- [x] **Step 5: Run tests and build**
 
 Run:
 
@@ -833,7 +833,7 @@ npm run build
 
 Expected: PASS.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/app/talent/onboarding src/components/talent src/features/talent
