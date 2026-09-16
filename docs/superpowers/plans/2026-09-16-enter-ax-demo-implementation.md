@@ -674,7 +674,7 @@ git commit -m "feat: establish Enter-AX application shell"
 - Consumes: `AppShell`
 - Produces: public CTAs linking to `/talent/onboarding` and `/agency/discover`
 
-- [ ] **Step 1: Write the failing landing test**
+- [x] **Step 1: Write the failing landing test**
 
 ```tsx
 import { render, screen } from "@testing-library/react";
@@ -688,13 +688,13 @@ it("states the connected AX proposition and exposes both entry points", () => {
 });
 ```
 
-- [ ] **Step 2: Verify test failure**
+- [x] **Step 2: Verify test failure**
 
 Run: `npm test -- src/app/page.test.tsx`
 
 Expected: FAIL because the existing page redirects to `/main`.
 
-- [ ] **Step 3: Implement editorial landing content**
+- [x] **Step 3: Implement editorial landing content**
 
 The landing must include these sections in order:
 
@@ -707,7 +707,7 @@ The landing must include these sections in order:
 
 Do not use invented customer logos, adoption counts, savings percentages, testimonials, or competitive-superiority claims.
 
-- [ ] **Step 4: Run tests and build**
+- [x] **Step 4: Run tests and build**
 
 Run:
 
@@ -719,7 +719,7 @@ npm run build
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/app/page.tsx src/app/page.test.tsx src/app/talent src/app/agency src/components/marketing
