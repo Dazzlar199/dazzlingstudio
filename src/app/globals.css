@@ -384,6 +384,34 @@ button, a, input, select, textarea { outline-offset: 4px; }
   .onboarding-panel { padding: 28px 18px 54px; }
 }
 
+.workspace-page { width: min(100%, 1260px); margin: 0 auto; padding: clamp(32px, 6vw, 82px); }
+.workspace-heading { margin-bottom: 36px; }
+.workspace-heading > p:first-child { font: 800 0.75rem var(--font-mono); letter-spacing: 0.08em; }
+.workspace-heading h1 { margin: 12px 0; font-size: clamp(2.8rem, 6vw, 6rem); letter-spacing: -0.07em; line-height: 0.95; }
+.workspace-heading > p:last-child { max-width: 700px; color: var(--muted); line-height: 1.65; }
+.offer-inbox { display: grid; gap: 16px; }
+.offer-card { border: 1px solid var(--line-light); background: var(--paper-strong); padding: clamp(22px, 4vw, 38px); }
+.offer-card header { display: flex; justify-content: space-between; gap: 12px; }
+.offer-card h2 { margin: 24px 0 10px; font-size: clamp(1.6rem, 3vw, 2.5rem); }
+.offer-card dl { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--line-light); border-bottom: 1px solid var(--line-light); }
+.offer-card dl div { padding: 16px; border-right: 1px solid var(--line-light); }
+.offer-card dl div:last-child { border-right: 0; }
+.offer-card dt { color: var(--muted); font-size: 0.78rem; }
+.offer-card dd { margin: 6px 0 0; font-weight: 760; }
+.offer-actions { display: flex; flex-wrap: wrap; gap: 8px; margin-top: 22px; }
+.dialog-backdrop { position: fixed; inset: 0; z-index: 80; display: grid; place-items: center; background: rgba(11, 13, 15, 0.72); padding: 20px; }
+.confirm-dialog { width: min(100%, 480px); border-top: 8px solid var(--lime); background: var(--paper-strong); color: var(--ink); padding: 30px; box-shadow: 12px 12px 0 var(--ink); }
+.confirm-dialog > div { display: flex; justify-content: flex-end; gap: 8px; margin-top: 24px; }
+.talent-profile-card { display: grid; grid-template-columns: minmax(160px, 0.35fr) 1fr; border: 1px solid var(--line-light); background: var(--paper-strong); }
+.profile-monogram { display: grid; min-height: 300px; place-items: center; background: var(--cobalt); color: white; font: 900 8rem var(--font-display); }
+.talent-profile-card > div:last-child { padding: clamp(24px, 5vw, 54px); }
+.talent-profile-card h2 { margin: 22px 0 10px; font-size: 3rem; }
+.preference-panel, .view-history { display: grid; gap: 16px; margin-top: 20px; border: 1px solid var(--line-light); padding: clamp(22px, 4vw, 38px); }
+.preference-panel label { display: flex; gap: 12px; }
+.preference-panel .button-outline { width: fit-content; }
+.view-history p { display: flex; justify-content: space-between; margin: 0; border-top: 1px solid var(--line-light); padding-top: 14px; }
+@media (max-width: 640px) { .talent-profile-card { grid-template-columns: 1fr; } .profile-monogram { min-height: 220px; } .offer-card dl { grid-template-columns: 1fr; } .offer-card dl div { border-right: 0; border-bottom: 1px solid var(--line-light); } }
+
 @media (max-width: 900px) {
   .site-header { grid-template-columns: auto 1fr; min-height: 118px; }
   .primary-nav {

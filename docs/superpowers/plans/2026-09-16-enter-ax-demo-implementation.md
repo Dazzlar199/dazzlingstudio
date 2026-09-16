@@ -855,7 +855,7 @@ git commit -m "feat: add privacy-first audition onboarding"
 - Consumes: `useDemo().state`, `useDemo().respondToOffer`, `useDemo().updateTalentPreferences`
 - Produces: accessible offer actions for `accepted`, `declined`, and `needs-info`
 
-- [ ] **Step 1: Write the failing offer-response test**
+- [x] **Step 1: Write the failing offer-response test**
 
 Create `src/components/talent/OfferInbox.test.tsx`:
 
@@ -886,13 +886,13 @@ it.each([
 });
 ```
 
-- [ ] **Step 2: Verify test failure**
+- [x] **Step 2: Verify test failure**
 
 Run: `npm test -- src/components/talent/OfferInbox.test.tsx`
 
 Expected: FAIL because `OfferInbox` does not exist.
 
-- [ ] **Step 3: Implement profile privacy controls and offer inbox**
+- [x] **Step 3: Implement profile privacy controls and offer inbox**
 
 The profile page must display:
 
@@ -905,7 +905,7 @@ The profile page must display:
 
 Offer responses must require confirmation in an in-page dialog and update the demo repository only after confirmation.
 
-- [ ] **Step 4: Run tests and build**
+- [x] **Step 4: Run tests and build**
 
 Run:
 
@@ -917,7 +917,7 @@ npm run build
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/app/talent/profile src/app/talent/offers src/components/talent
