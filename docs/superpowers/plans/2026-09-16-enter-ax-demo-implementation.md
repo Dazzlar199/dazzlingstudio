@@ -956,7 +956,7 @@ export interface TalentFilters {
 }
 ```
 
-- [ ] **Step 1: Write failing filter tests**
+- [x] **Step 1: Write failing filter tests**
 
 Create `src/features/agency/filters.test.ts` and build two minimal `TalentProfile` fixtures, one
 Seoul/idol/public with direct-file vocal media and one Busan/dance/verified-agencies with YouTube
@@ -975,7 +975,7 @@ expect(filterTalents(talents, { field: "dance", region: "부산" }).map(({ id })
 expect(filterTalents(talents, { field: "actor" })).toEqual([]);
 ```
 
-- [ ] **Step 2: Write a failing contact-request test**
+- [x] **Step 2: Write a failing contact-request test**
 
 Create `src/components/agency/TalentReview.test.tsx`. Use `demoState.talents[0]` and the verified
 agency fixture; fill fields labeled `제안 제목`, `제안 목적`, `분야`, `회신 기한`, `담당 부서`,
@@ -995,7 +995,7 @@ expect(onCreateOffer).toHaveBeenCalledWith(expect.objectContaining({
 expect(screen.getByRole("button", { name: "오디션 제안 보내기" })).toBeDisabled();
 ```
 
-- [ ] **Step 3: Verify tests fail**
+- [x] **Step 3: Verify tests fail**
 
 Run:
 
@@ -1005,7 +1005,7 @@ npm test -- src/features/agency/filters.test.ts src/components/agency/TalentRevi
 
 Expected: FAIL because filters and agency components do not exist.
 
-- [ ] **Step 4: Implement discovery and detail pages**
+- [x] **Step 4: Implement discovery and detail pages**
 
 Talent cards must show field, age band, region, media-source status, and privacy status rather than only a portrait. The review page must distinguish `원본 파일 · 분석 연결 가능`, `YouTube · 재생 전용`, and `데모 분석`.
 
@@ -1015,7 +1015,7 @@ automatic talent score or recommendation.
 
 The offer form must not contain or reveal personal contact information. Duplicate offers must link to the existing offer status instead of creating a second active request.
 
-- [ ] **Step 5: Run tests and build**
+- [x] **Step 5: Run tests and build**
 
 Run:
 
@@ -1027,7 +1027,7 @@ npm run build
 
 Expected: PASS.
 
-- [ ] **Step 6: Commit**
+- [x] **Step 6: Commit**
 
 ```bash
 git add src/features/agency src/app/agency/discover src/app/agency/talent src/components/agency
