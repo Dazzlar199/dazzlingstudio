@@ -1047,7 +1047,7 @@ git commit -m "feat: add verified-agency talent discovery"
 - Consumes: `Candidate[]`, `TalentProfile[]`, `useDemo().moveCandidate`
 - Produces: keyboard-accessible and pointer-accessible stage movement
 
-- [ ] **Step 1: Write the failing pipeline test**
+- [x] **Step 1: Write the failing pipeline test**
 
 Create `src/components/agency/CandidateBoard.test.tsx`:
 
@@ -1070,20 +1070,20 @@ it("moves a candidate with the accessible stage menu", async () => {
 });
 ```
 
-- [ ] **Step 2: Verify test failure**
+- [x] **Step 2: Verify test failure**
 
 Run: `npm test -- src/components/agency/CandidateBoard.test.tsx`
 
 Expected: FAIL because `CandidateBoard` does not exist.
 
-- [ ] **Step 3: Implement the board with an accessible fallback**
+- [x] **Step 3: Implement the board with an accessible fallback**
 
 Pointer drag-and-drop may be added without an external library, but every card must also have an explicit stage menu. On narrow screens, render grouped cards vertically rather than a horizontally scrolling table.
 
 Each card must show talent name, field, owner, latest activity, next action, team note, and media readiness.
 Changing owner, team note, or stage must append an activity entry. Do not display private contact data.
 
-- [ ] **Step 4: Run tests and build**
+- [x] **Step 4: Run tests and build**
 
 Run:
 
@@ -1095,7 +1095,7 @@ npm run build
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/app/agency/pipeline src/components/agency/CandidateBoard.tsx src/components/agency/CandidateBoard.test.tsx
