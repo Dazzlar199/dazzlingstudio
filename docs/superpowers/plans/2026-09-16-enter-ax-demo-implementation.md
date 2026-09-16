@@ -127,7 +127,7 @@ vitest.config.ts
 - Produces: `validateTalentDraft(draft: TalentDraft): ValidationErrors`
 - Produces: `parseYouTubeVideoId(value: string): string | null`
 
-- [ ] **Step 1: Install the unit-test dependencies and scripts**
+- [x] **Step 1: Install the unit-test dependencies and scripts**
 
 Run:
 
@@ -144,7 +144,7 @@ Add these exact scripts to `package.json`:
 "check": "npm run typecheck && npm run lint && npm run test && npm run build"
 ```
 
-- [ ] **Step 2: Configure Vitest**
+- [x] **Step 2: Configure Vitest**
 
 Create `vitest.config.ts`:
 
@@ -169,7 +169,7 @@ Create `src/test/setup.ts`:
 import "@testing-library/jest-dom/vitest";
 ```
 
-- [ ] **Step 3: Write failing validation tests**
+- [x] **Step 3: Write failing validation tests**
 
 Create `src/features/talent/validation.test.ts` with cases for missing photos, guardian consent, valid file submissions, valid YouTube submissions, and invalid YouTube URLs:
 
@@ -235,7 +235,7 @@ describe("parseYouTubeVideoId", () => {
 });
 ```
 
-- [ ] **Step 4: Run the tests and verify failure**
+- [x] **Step 4: Run the tests and verify failure**
 
 Run:
 
@@ -245,7 +245,7 @@ npm test -- src/features/talent/validation.test.ts
 
 Expected: FAIL because `validation.ts`, `youtube.ts`, and the domain types do not exist.
 
-- [ ] **Step 5: Define domain types and implement minimal validation**
+- [x] **Step 5: Define domain types and implement minimal validation**
 
 Create `src/types/domain.ts` with discriminated unions rather than optional flag combinations. Required names:
 
@@ -419,7 +419,7 @@ Implement `validateTalentDraft(draft: TalentDraft): ValidationErrors` and
 `[A-Za-z0-9_-]{11}`. Validation must require all profile fields, three photos, vocal and dance media,
 guardian consent for minors, and a successfully parsed video ID whenever a media source is `youtube`.
 
-- [ ] **Step 6: Run unit tests and quality checks**
+- [x] **Step 6: Run unit tests and quality checks**
 
 Run:
 
@@ -430,7 +430,7 @@ npm run typecheck
 
 Expected: PASS.
 
-- [ ] **Step 7: Commit**
+- [x] **Step 7: Commit**
 
 ```bash
 git add package.json package-lock.json vitest.config.ts src/test src/types src/features/talent src/lib/youtube.ts
