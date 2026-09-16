@@ -1,137 +1,33 @@
-import type { Metadata } from "next";
-import {
-  Inter,
-  JetBrains_Mono,
-  Orbitron,
-  Poppins,
-  Nunito_Sans,
-  Space_Grotesk,
-} from "next/font/google";
+import type { Metadata, Viewport } from "next";
+
+import { DemoProvider } from "@/features/demo/DemoProvider";
+
 import "./globals.css";
-import { ThemeProvider } from "@/contexts/ThemeContext";
-import StructuredData from "@/components/shared/StructuredData";
-
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "700", "900"],
-});
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const nunitoSans = Nunito_Sans({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dazzlar.dev'),
-  title: "Dazzling Studio - Music & AI CONTENTS STUDIO",
-  description:
-    "음악과 기술이 만나는 특별한 공간. 전문 음향 녹음 스튜디오와 웹 개발 서비스를 제공합니다.",
-  keywords: [
-    "음향 녹음",
-    "축가 녹음",
-    "믹싱 마스터링",
-    "웹 개발",
-    "풀스택 개발",
-    "Next.js",
-    "React",
-    "스튜디오",
-    "Dazzlar",
-  ],
-  authors: [{ name: "Dazzling Studio" }],
-  creator: "Dazzling Studio",
-  publisher: "Dazzling Studio",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
+  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL ?? "https://dazzlingstudio-d423acmci-dazzlars-projects.vercel.app"),
+  title: {
+    default: "Enter-AX | 엔터테인먼트 AX 운영 플랫폼",
+    template: "%s | Enter-AX",
   },
-  openGraph: {
-    title: "Dazzling Studio - Music & AI CONTENTS STUDIO",
-    description: "음악과 기술이 만나는 특별한 공간",
-    url: "https://dazzlar.studio",
-    siteName: "Dazzling Studio",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Dazzling Studio - 음악과 기술의 만남",
-      },
-    ],
-    locale: "ko_KR",
-    type: "website",
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dazzling Studio - Music & AI CONTENTS STUDIO",
-    description: "음악과 기술이 만나는 특별한 공간",
-    images: ["/og-image.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  description: "지원자 등록부터 엔터사의 검수·컨택·사내 AX·홍보 콘텐츠 준비까지 연결하는 인터랙티브 데모입니다.",
+  applicationName: "Enter-AX",
+  keywords: ["엔터테인먼트 AX", "오디션", "인재 검수", "업무 자동화", "홍보 콘텐츠"],
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  viewportFit: "cover",
+  themeColor: "#0b0d0f",
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko" className="scroll-smooth">
-      <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
-        <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#8B5CF6" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, viewport-fit=cover"
-        />
-      </head>
-      <body
-        className={`${inter.variable} ${jetBrainsMono.variable} ${orbitron.variable} ${poppins.variable} ${nunitoSans.variable} ${spaceGrotesk.variable} antialiased min-h-screen`}
-      >
-        <StructuredData />
-        <ThemeProvider>{children}</ThemeProvider>
+    <html lang="ko">
+      <body>
+        <DemoProvider>{children}</DemoProvider>
       </body>
     </html>
   );

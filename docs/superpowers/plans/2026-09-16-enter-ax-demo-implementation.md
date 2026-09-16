@@ -593,7 +593,7 @@ git commit -m "feat: add typed demo data repository"
 - Consumes: `DemoProvider`
 - Produces: `AppShell({ mode, children })`, `DemoBadge`, `StatusBadge`, `RoleSwitcher`
 
-- [ ] **Step 1: Write a failing shell test**
+- [x] **Step 1: Write a failing shell test**
 
 ```tsx
 import { render, screen } from "@testing-library/react";
@@ -607,13 +607,13 @@ it("shows brand, demo disclosure, and role switcher", () => {
 });
 ```
 
-- [ ] **Step 2: Verify test failure**
+- [x] **Step 2: Verify test failure**
 
 Run: `npm test -- src/components/shared/AppShell.test.tsx`
 
 Expected: FAIL because `AppShell` does not exist.
 
-- [ ] **Step 3: Implement the design tokens and shell**
+- [x] **Step 3: Implement the design tokens and shell**
 
 Use these exact core CSS tokens:
 
@@ -636,7 +636,7 @@ Remove the global `* { transition: ... }` rule. Respect `prefers-reduced-motion`
 Wrap the application in `DemoProvider`. `RoleSwitcher` must call `setRole`, provide `지원자 데모로 입장`
 and `엔터사 데모로 입장`, and restore the selected role from versioned demo state.
 
-- [ ] **Step 4: Run tests and build**
+- [x] **Step 4: Run tests and build**
 
 Run:
 
@@ -648,7 +648,7 @@ npm run build
 
 Expected: PASS.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/app src/components/shared src/contexts src/types
