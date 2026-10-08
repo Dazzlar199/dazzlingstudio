@@ -4,7 +4,7 @@ export const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "rlackswn20
 
 export const company = {
   name: "AI특별시",
-  representative: { ko: "김찬주", en: "Chanju Kim" },
+  representative: { ko: "김찬주", en: "Chan Joo Kim" },
   phone: { display: "010-2068-9295", tel: "+821020689295" },
 } as const;
 export const productUrl = process.env.NEXT_PUBLIC_ENTER_AX_URL || "";
@@ -118,7 +118,7 @@ export const copy = {
       "Receive contact details or the protection log. For trainee summaries, names, birth dates and evaluator names are removed first.",
     ],
     studioTitle: "The studio behind it",
-    studioBody: "Dazzling Studio started as a recording studio, and Chanju Kim (김찬주), who leads AI특별시, has run it for seven years. Enter-AX is built by him and one developer.",
+    studioBody: "Dazzling Studio started as a recording studio, and Chan Joo Kim (김찬주), who leads AI특별시, has run it for seven years. Enter-AX is built by him and one developer.",
     contactTitle: "Running an agency's casting or training team?",
     contactBody: "We are looking for a small number of agencies to pilot Enter-AX with. Tell us how you take applications and keep trainee records today.",
     representativeLabel: "Representative",

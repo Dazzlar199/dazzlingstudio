@@ -42,7 +42,7 @@ const organization = {
   logo: `${siteUrl}/web_image/share_logo.png`,
   description,
   address: { "@type": "PostalAddress", addressCountry: "KR" },
-  founder: { "@type": "Person", name: "김찬주", alternateName: "Chanju Kim" },
+  founder: { "@type": "Person", name: "김찬주", alternateName: "Chan Joo Kim" },
   contactPoint: {
     "@type": "ContactPoint",
     contactType: "sales",
