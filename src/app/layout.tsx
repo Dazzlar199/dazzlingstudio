@@ -37,10 +37,19 @@ const organization = {
   "@context": "https://schema.org",
   "@type": "Organization",
   name: "Dazzling Studio",
+  alternateName: "AI특별시",
   url: siteUrl,
   logo: `${siteUrl}/web_image/share_logo.png`,
   description,
   address: { "@type": "PostalAddress", addressCountry: "KR" },
+  founder: { "@type": "Person", name: "김찬주", alternateName: "Chanju Kim" },
+  contactPoint: {
+    "@type": "ContactPoint",
+    contactType: "sales",
+    telephone: "+82-10-2068-9295",
+    email: "rlackswn2000@gmail.com",
+    availableLanguage: ["Korean", "English"],
+  },
 };
 
 const product = {

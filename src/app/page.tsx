@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { RecordSession } from "@/components/company/RecordSession";
-import { contactEmail, copy, kakaoUrl, productUrl, type Lang } from "@/content/company";
+import { company, contactEmail, copy, kakaoUrl, productUrl, type Lang } from "@/content/company";
 
 import "./company.css";
 
@@ -100,6 +100,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
             </div>
             <div className="co-actions">
               <a className="co-btn co-btn--solid" href={mailto}>{contactEmail}</a>
+              <a className="co-btn co-btn--line" href={`tel:${company.phone.tel}`}>{company.phone.display}</a>
               <a className="co-btn co-btn--line" href={kakaoUrl} rel="noreferrer" target="_blank">KakaoTalk</a>
             </div>
           </div>
@@ -107,7 +108,8 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
       </main>
 
       <footer className="co-footer">
-        <span>© {new Date().getFullYear()} {t.footer}</span>
+        <span>© {new Date().getFullYear()} {t.footer} · {company.name} · {t.representativeLabel} {company.representative[lang]}</span>
+        <span><a href={`tel:${company.phone.tel}`}>{company.phone.display}</a> · <a href={mailto}>{contactEmail}</a></span>
         <span>Enter-AX · Built on the Claude API</span>
       </footer>
     </div>

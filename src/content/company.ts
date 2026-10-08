@@ -1,6 +1,12 @@
 export type Lang = "en" | "ko";
 
-export const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "rlackswn2000@naver.com";
+export const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "rlackswn2000@gmail.com";
+
+export const company = {
+  name: "AI특별시",
+  representative: { ko: "김찬주", en: "Chanju Kim" },
+  phone: { display: "010-2068-9295", tel: "+821020689295" },
+} as const;
 export const productUrl = process.env.NEXT_PUBLIC_ENTER_AX_URL || "";
 export const kakaoUrl = "http://pf.kakao.com/_gxgbxcn/chat";
 
@@ -112,9 +118,10 @@ export const copy = {
       "Receive contact details or the protection log. For trainee summaries, names, birth dates and evaluator names are removed first.",
     ],
     studioTitle: "The studio behind it",
-    studioBody: "Dazzling Studio started as a recording studio, and its founder has run it for seven years. Enter-AX is built by the founder and one developer. The studio still records and builds for clients.",
+    studioBody: "Dazzling Studio started as a recording studio, and Chanju Kim (김찬주), who leads AI특별시, has run it for seven years. Enter-AX is built by him and one developer.",
     contactTitle: "Running an agency's casting or training team?",
     contactBody: "We are looking for a small number of agencies to pilot Enter-AX with. Tell us how you take applications and keep trainee records today.",
+    representativeLabel: "Representative",
     footer: "Dazzling Studio",
   },
   ko: {
@@ -175,9 +182,10 @@ export const copy = {
       "연락처와 보호 기록은 전달되지 않습니다. 연습생 기록 정리에서는 이름, 생년월일, 평가자 이름을 먼저 지웁니다.",
     ],
     studioTitle: "만드는 사람들",
-    studioBody: "Dazzling Studio는 녹음 스튜디오로 시작했고, 대표가 7년간 운영해 왔습니다. Enter-AX는 대표와 개발자 한 명이 만듭니다. 스튜디오는 지금도 녹음과 제작 의뢰를 받습니다.",
+    studioBody: "Dazzling Studio는 녹음 스튜디오로 시작했고, AI특별시 대표 김찬주가 7년간 운영해 왔습니다. Enter-AX는 대표와 개발자 한 명이 만듭니다.",
     contactTitle: "기획사의 캐스팅팀이나 트레이닝팀을 운영하고 계신가요?",
     contactBody: "Enter-AX를 함께 시험할 기획사를 소수로 찾고 있습니다. 지금 지원을 어떻게 받고 연습생 기록을 어떻게 남기는지 알려 주세요.",
+    representativeLabel: "대표",
     footer: "Dazzling Studio",
   },
 } as const;

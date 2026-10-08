@@ -32,7 +32,7 @@ npm run build:production   # lint + build
 | 이름 | 용도 |
 | --- | --- |
 | `NEXT_PUBLIC_SITE_URL` | 사이트 주소. 기본값 `https://dazzlar.dev` |
-| `NEXT_PUBLIC_CONTACT_EMAIL` | 문의 메일. 회사 도메인 메일을 만들면 여기에 넣습니다 |
+| `NEXT_PUBLIC_CONTACT_EMAIL` | 문의 메일. 기본값은 `src/content/company.ts`에 있고, 회사 도메인 메일을 만들면 여기에 넣습니다 |
 | `NEXT_PUBLIC_ENTER_AX_URL` | Enter-AX 제품 주소. 넣으면 첫 화면에 "Open Enter-AX" 버튼이 나타납니다 |
 
 ## 문구를 고칠 때
