@@ -2,11 +2,6 @@
   "buildCommand": "npm run build:production",
   "outputDirectory": ".next",
   "framework": "nextjs",
-  "functions": {
-    "src/app/api/chat/route.ts": {
-      "maxDuration": 30
-    }
-  },
   "headers": [
     {
       "source": "/(.*)",
@@ -52,7 +47,22 @@
     {
       "source": "/home",
       "destination": "/",
-      "permanent": true
+      "permanent": false
+    },
+    {
+      "source": "/main",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/music",
+      "destination": "/",
+      "permanent": false
+    },
+    {
+      "source": "/dev",
+      "destination": "/",
+      "permanent": false
     }
   ]
 }

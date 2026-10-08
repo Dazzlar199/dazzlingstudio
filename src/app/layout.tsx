@@ -1,138 +1,71 @@
-import type { Metadata } from "next";
-import {
-  Inter,
-  JetBrains_Mono,
-  Orbitron,
-  Poppins,
-  Nunito_Sans,
-  Space_Grotesk,
-} from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
+
 import "./globals.css";
-import { ThemeProvider } from "@/contexts/ThemeContext";
-import StructuredData from "@/components/shared/StructuredData";
 
-const inter = Inter({
-  variable: "--font-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
+const display = Bricolage_Grotesque({ variable: "--font-display", subsets: ["latin"], display: "swap", weight: ["600", "700"] });
+const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"], display: "swap", weight: ["400", "500"] });
 
-const jetBrainsMono = JetBrains_Mono({
-  variable: "--font-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const orbitron = Orbitron({
-  variable: "--font-orbitron",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["400", "700", "900"],
-});
-
-const poppins = Poppins({
-  variable: "--font-poppins",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
-
-const nunitoSans = Nunito_Sans({
-  variable: "--font-nunito",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700", "800", "900"],
-});
-
-const spaceGrotesk = Space_Grotesk({
-  variable: "--font-space",
-  subsets: ["latin"],
-  display: "swap",
-  weight: ["300", "400", "500", "600", "700"],
-});
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dazzlar.dev";
+const title = "Dazzling Studio | Enter-AX, the operations platform for K-pop agencies";
+const description =
+  "Dazzling Studio builds Enter-AX: one record per person for K-pop agencies, from audition intake to trainee evaluations and the youth-protection log, with Claude organising the record and people making the decisions.";
 
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_SITE_URL || 'https://dazzlar.dev'),
-  title: "Dazzling Studio - Music & AI CONTENTS STUDIO",
-  description:
-    "음악과 기술이 만나는 특별한 공간. 전문 음향 녹음 스튜디오와 웹 개발 서비스를 제공합니다.",
-  keywords: [
-    "음향 녹음",
-    "축가 녹음",
-    "믹싱 마스터링",
-    "웹 개발",
-    "풀스택 개발",
-    "Next.js",
-    "React",
-    "스튜디오",
-    "Dazzlar",
-  ],
+  metadataBase: new URL(siteUrl),
+  title,
+  description,
+  applicationName: "Dazzling Studio",
+  keywords: ["Enter-AX", "K-pop", "entertainment agency", "audition", "trainee management", "youth protection", "Claude", "엔터테인먼트", "오디션", "연습생", "청소년보호책임자"],
   authors: [{ name: "Dazzling Studio" }],
-  creator: "Dazzling Studio",
-  publisher: "Dazzling Studio",
-  formatDetection: {
-    email: false,
-    address: false,
-    telephone: false,
-  },
+  alternates: { canonical: "/", languages: { en: "/", ko: "/?lang=ko" } },
   openGraph: {
-    title: "Dazzling Studio - Music & AI CONTENTS STUDIO",
-    description: "음악과 기술이 만나는 특별한 공간",
-    url: "https://dazzlar.studio",
+    title,
+    description,
+    url: siteUrl,
     siteName: "Dazzling Studio",
-    images: [
-      {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
-        alt: "Dazzling Studio - 음악과 기술의 만남",
-      },
-    ],
-    locale: "ko_KR",
+    images: [{ url: "/og-image.png", width: 1024, height: 1024, alt: "Dazzling Studio" }],
     type: "website",
   },
-  twitter: {
-    card: "summary_large_image",
-    title: "Dazzling Studio - Music & AI CONTENTS STUDIO",
-    description: "음악과 기술이 만나는 특별한 공간",
-    images: ["/og-image.png"],
-  },
-  robots: {
-    index: true,
-    follow: true,
-    googleBot: {
-      index: true,
-      follow: true,
-      "max-video-preview": -1,
-      "max-image-preview": "large",
-      "max-snippet": -1,
-    },
-  },
+  twitter: { card: "summary", title, description, images: ["/og-image.png"] },
+  robots: { index: true, follow: true },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = { width: "device-width", initialScale: 1, themeColor: "#eef0f4" };
+
+const organization = {
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  name: "Dazzling Studio",
+  url: siteUrl,
+  logo: `${siteUrl}/web_image/share_logo.png`,
+  description,
+  address: { "@type": "PostalAddress", addressCountry: "KR" },
+};
+
+const product = {
+  "@context": "https://schema.org",
+  "@type": "SoftwareApplication",
+  name: "Enter-AX",
+  applicationCategory: "BusinessApplication",
+  operatingSystem: "Web",
+  description: "Operations platform for K-pop entertainment agencies: audition intake, review pipeline, trainee records and a youth-protection log.",
+  creator: { "@type": "Organization", name: "Dazzling Studio" },
+};
+
+export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {
   return (
-    <html lang="ko" className="scroll-smooth">
+    <html lang="en">
       <head>
-        <link rel="icon" href="/favicon.ico" />
-        <link rel="apple-touch-icon" href="/apple-touch-icon.png" />
         <link rel="manifest" href="/manifest.json" />
-        <meta name="theme-color" content="#8B5CF6" />
-        <meta
-          name="viewport"
-          content="width=device-width, initial-scale=1, viewport-fit=cover"
+        <link
+          rel="stylesheet"
+          crossOrigin="anonymous"
+          href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
         />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([organization, product]) }} />
       </head>
-      <body
-        className={`${inter.variable} ${jetBrainsMono.variable} ${orbitron.variable} ${poppins.variable} ${nunitoSans.variable} ${spaceGrotesk.variable} antialiased min-h-screen`}
-      >
-        <StructuredData />
-        <ThemeProvider>{children}</ThemeProvider>
-      </body>
+      <body className={`${display.variable} ${mono.variable}`}>{children}</body>
     </html>
   );
 }

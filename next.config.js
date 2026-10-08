@@ -17,11 +17,13 @@ const nextConfig = {
   },
 
   // 번들 분할 최적화
-  experimental: {
-    optimizePackageImports: ['framer-motion', 'lucide-react'],
-  },
 
   // 빌드 최적화는 Next.js 15에서 기본으로 활성화됨
+
+  // 예전 포트폴리오 주소는 회사 홈으로 보낸다
+  async redirects() {
+    return ['/home', '/main', '/music', '/dev'].map((source) => ({ source, destination: '/', permanent: false }));
+  },
 
   // 헤더 설정
   async headers() {

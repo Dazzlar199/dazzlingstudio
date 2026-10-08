@@ -1,64 +1,31 @@
 @import "tailwindcss";
 
 :root {
-  /* Default theme variables */
-  --primary: #D4AF37;
-  --secondary: #1A237E;
-  --accent: #FF8A65;
-  --background: #FEFEFE;
-  --text: #1A1A1A;
-  --text-secondary: #666666;
-  --border: #E0E0E0;
-  --card-bg: #FFFFFF;
-  --gradient: linear-gradient(135deg, #D4AF37 0%, #FF8A65 100%);
+  --plate: #eef0f4;
+  --surface: #ffffff;
+  --ink: #12141c;
+  --muted: #5b6172;
+  --line: #d5d9e2;
+  --lane-audition: #d9366f;
+  --lane-evaluation: #3d43c9;
+  --lane-protection: #12877a;
+  --lane-claude: #c9820a;
+  --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
-@theme inline {
-  --color-primary: var(--primary);
-  --color-secondary: var(--secondary);
-  --color-accent: var(--accent);
-  --color-background: var(--background);
-  --color-text: var(--text);
-  --color-text-secondary: var(--text-secondary);
-  --color-border: var(--border);
-  --color-card-bg: var(--card-bg);
-  --font-sans: ui-sans-serif, system-ui, sans-serif;
-  --font-mono: ui-monospace, SFMono-Regular, "SF Mono", monospace;
-}
+html { scroll-behavior: smooth; }
 
 body {
-  background: var(--background);
-  color: var(--text);
-  font-family: var(--font-sans);
-  transition: all 0.3s ease;
+  margin: 0;
+  background: var(--plate);
+  color: var(--ink);
+  font-family: var(--font-body);
+  -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
 }
 
-/* Smooth transitions for theme changes */
-* {
-  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-}
+::selection { background: var(--ink); color: var(--plate); }
 
-/* Scrollbar styling */
-::-webkit-scrollbar {
-  width: 8px;
-}
-
-::-webkit-scrollbar-track {
-  background: var(--background);
-}
-
-::-webkit-scrollbar-thumb {
-  background: var(--primary);
-  border-radius: 4px;
-}
-
-::-webkit-scrollbar-thumb:hover {
-  background: var(--accent);
-}
-
-/* Selection styling */
-::selection {
-  background: var(--primary);
-  color: var(--background);
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
 }
