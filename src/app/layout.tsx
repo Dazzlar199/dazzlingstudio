@@ -1,10 +1,6 @@
 import type { Metadata, Viewport } from "next";
-import { Bricolage_Grotesque, JetBrains_Mono } from "next/font/google";
 
 import "./globals.css";
-
-const display = Bricolage_Grotesque({ variable: "--font-display", subsets: ["latin"], display: "swap", weight: ["600", "700"] });
-const mono = JetBrains_Mono({ variable: "--font-mono", subsets: ["latin"], display: "swap", weight: ["400", "500"] });
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dazzlar.dev";
 const title = "Dazzling Studio | Enter-AX, the operations platform for K-pop agencies";
@@ -67,6 +63,13 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
     <html lang="en">
       <head>
         <link rel="manifest" href="/manifest.json" />
+        {/* Fonts load at runtime so a build never depends on reaching a font server. */}
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossOrigin="anonymous" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700&family=JetBrains+Mono:wght@400;500&display=swap"
+        />
         <link
           rel="stylesheet"
           crossOrigin="anonymous"
@@ -74,7 +77,7 @@ export default function RootLayout({ children }: Readonly<{ children: React.Reac
         />
         <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify([organization, product]) }} />
       </head>
-      <body className={`${display.variable} ${mono.variable}`}>{children}</body>
+      <body>{children}</body>
     </html>
   );
 }

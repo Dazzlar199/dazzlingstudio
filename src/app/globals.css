@@ -10,6 +10,8 @@
   --lane-evaluation: #3d43c9;
   --lane-protection: #12877a;
   --lane-claude: #c9820a;
+  --font-display: "Bricolage Grotesque";
+  --font-mono: "JetBrains Mono";
   --font-body: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont, "Apple SD Gothic Neo", "Noto Sans KR", sans-serif;
 }
 
