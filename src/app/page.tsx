@@ -18,12 +18,13 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
         <div className="co">
           <header className="co-nav">
             <Link className="co-nav__brand" href={lang === "ko" ? "/?lang=ko" : "/"}>
-              <span className="co-nav__mark" aria-hidden="true">DS</span>
-              Dazzling Studio
+              <span className="co-nav__mark" aria-hidden="true">DZ</span>
+              {company.brand}
             </Link>
             <nav className="co-nav__links" aria-label={lang === "ko" ? "페이지 내 이동" : "On this page"}>
               <a href="#product">{t.nav.product}</a>
               <a href="#claude">{t.nav.claude}</a>
+              <a href="#work">{t.nav.work}</a>
               <a href="#studio">{t.nav.studio}</a>
               <a href="#contact">{t.nav.contact}</a>
               <Link className="co-nav__lang" href={lang === "ko" ? "/" : "/?lang=ko"} hrefLang={lang === "ko" ? "en" : "ko"}>{t.switchLabel}</Link>
@@ -135,6 +136,35 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           </div>
         </section>
 
+        <section className="co-band co-band--dark" id="work" aria-labelledby="work-title">
+          <div className="co">
+            <h2 id="work-title">{t.workTitle}</h2>
+            <p className="co-lede">{t.workLede}</p>
+            <div className="co-work">
+              {t.work.map((item) => (
+                <article className="co-work__card co-reveal" key={item.head}>
+                  <p className="co-mono">{item.tag}</p>
+                  <h3>{item.head}</h3>
+                  <p>{item.body}</p>
+                  {"link" in item ? (
+                    <a href={item.link.href} {...(item.link.href.startsWith("http") ? { rel: "noreferrer", target: "_blank" } : {})}>
+                      {item.link.label} {item.link.href.startsWith("http") ? "↗" : "→"}
+                    </a>
+                  ) : null}
+                </article>
+              ))}
+            </div>
+            <div className="co-rules" aria-label={t.rulesTitle}>
+              <p className="co-mono">{t.rulesTitle}</p>
+              <ol>
+                {t.rules.map(([head, body]) => (
+                  <li key={head}><strong>{head}</strong><span>{body}</span></li>
+                ))}
+              </ol>
+            </div>
+          </div>
+        </section>
+
         <section className="co-band" id="studio" aria-labelledby="studio-title">
           <div className="co">
             <div className="co-studio">
@@ -171,7 +201,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
       <footer className="co co-footer">
         <span>© {new Date().getFullYear()} {t.footer} · {company.name} · {t.representativeLabel} {company.representative[lang]}</span>
         <span><a href={`tel:${company.phone.tel}`}>{company.phone.display}</a> · <a href={mailto}>{contactEmail}</a></span>
-        <span>Enter-AX · Built on the Claude API</span>
+        <span>https://dazzlar.dev · Enter-AX is built on the Claude API</span>
       </footer>
     </div>
   );

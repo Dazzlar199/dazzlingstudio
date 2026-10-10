@@ -188,3 +188,22 @@
   .co-clip, .co-session__playhead, .co-status i { animation: none; opacity: 1; }
   .co-btn, .co-feature { transition: none; }
 }
+
+/* What we run */
+.co-work { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 16px; margin-top: clamp(36px, 4vw, 56px); }
+.co-work__card { display: flex; flex-direction: column; padding: 26px 24px 24px; border: 1px solid var(--rule); border-radius: 16px; background: var(--card); transition: transform .2s, border-color .2s; }
+.co-work__card:hover { transform: translateY(-3px); border-color: #3a4159; }
+.co-work__card:first-child { border-color: color-mix(in srgb, #e8a22b 55%, var(--rule)); background: linear-gradient(160deg, rgb(232 162 43 / 12%), transparent 55%), var(--card); }
+.co-work__card:first-child .co-mono { color: #e8a22b; }
+.co-work__card h3 { margin: 14px 0 0; font-size: 20px; line-height: 1.3; letter-spacing: -.02em; word-break: keep-all; }
+.co-work__card p:not(.co-mono) { margin: 10px 0 0; font-size: 14.5px; line-height: 1.72; color: var(--fg-soft); word-break: keep-all; }
+.co-work__card a { margin-top: auto; padding-top: 18px; font-size: 13.5px; font-weight: 600; text-decoration: none; }
+.co-work__card a:hover { text-decoration: underline; }
+.co-rules { margin-top: clamp(36px, 4vw, 56px); padding-top: 22px; border-top: 1px solid var(--rule); }
+.co-rules ol { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: clamp(18px, 3vw, 40px); margin: 18px 0 0; padding: 0; list-style: none; counter-reset: rule; }
+.co-rules li { counter-increment: rule; display: grid; gap: 6px; font-size: 14.5px; line-height: 1.65; word-break: keep-all; }
+.co-rules li::before { content: "0" counter(rule); font-family: var(--font-mono), ui-monospace, monospace; font-size: 11px; letter-spacing: .12em; color: var(--fg-muted); }
+.co-rules strong { font-size: 16px; letter-spacing: -.01em; }
+.co-rules span { color: var(--fg-soft); }
+@media (max-width: 860px) { .co-work, .co-rules ol { grid-template-columns: minmax(0, 1fr); } }
+@media (prefers-reduced-motion: reduce) { .co-work__card { transition: none; } }

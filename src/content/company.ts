@@ -1,9 +1,10 @@
 export type Lang = "en" | "ko";
 
-export const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "rlackswn2000@gmail.com";
+export const contactEmail = process.env.NEXT_PUBLIC_CONTACT_EMAIL || "chanjoo@dazzlar.dev";
 
 export const company = {
   name: "AI특별시",
+  brand: "Dazzlar",
   representative: { ko: "김찬주", en: "Chan Joo Kim" },
   phone: { display: "010-2068-9295", tel: "+821020689295" },
 } as const;
@@ -61,11 +62,11 @@ export const lanes: Array<{ key: LaneKey; name: Record<Lang, string>; clips: Cli
 
 export const copy = {
   en: {
-    nav: { product: "Enter-AX", claude: "Claude", studio: "Studio", contact: "Contact" },
+    nav: { product: "Enter-AX", claude: "Claude", work: "What we run", studio: "Company", contact: "Contact" },
     switchLabel: "한국어",
-    eyebrow: "Dazzling Studio · Korea",
-    title: "One record per person, from audition to debut.",
-    lede: "Dazzling Studio builds Enter-AX, an operations platform for K-pop entertainment agencies. It carries each person's record from the audition application through monthly trainee evaluations and the youth-protection log Korean law now asks agencies to keep.",
+    eyebrow: "Dazzlar · AI특별시 · Korea",
+    title: "Operations software built on Claude. People still make the decisions.",
+    lede: "Dazzlar is a one-person software company in Korea. Our product is Enter-AX, an operations platform for K-pop entertainment agencies that carries each person's record from the audition application through monthly trainee evaluations and the youth-protection log Korean law now asks agencies to keep.",
     primaryCta: "See what it does",
     contactCta: "Talk to us",
     productCta: "Open Enter-AX",
@@ -140,21 +141,35 @@ export const copy = {
       draftTitle: "Feedback draft",
       draft: "Your high notes have become noticeably steadier over the last two months. Next month, let's work on the chorus timing together.",
     },
+    workTitle: "What we run with Claude every day.",
+    workLede: "Enter-AX is where Claude sits inside the product, through the Claude API. The businesses below are ones we operate ourselves with Claude Code. They are how one person builds and keeps this much running, and what we learn running them goes back into the product.",
+    work: [
+      { tag: "Claude API · product", head: "Enter-AX", body: "The product. Claude organises months of evaluator comments into a growth summary and a feedback draft for agency staff, and breaks planning documents into goals, risks and next actions.", link: { label: "See the product", href: "#product" } },
+      { tag: "Claude Code · publishing", head: "A publishing engine for the-cyclopedia.com", body: "A Korean blog about building with AI, published by an engine we wrote. Each post passes a guard for things that must not be published, an SEO check and a fact-checking subagent that compares its figures with the source files. It reaches WordPress as a draft and waits for a person to publish it.", link: { label: "the-cyclopedia.com", href: "https://the-cyclopedia.com" } },
+      { tag: "Claude Code · mini apps", head: "Mini apps for Apps in Toss", body: "Small utilities for the mini-app platform inside the Toss app: a water tracker, a card-spending pacer, a currency calculator, a K-Pass refund calculator and more. Each starts from a shared template, and a harness hands Claude Code only the files a task needs. The build logs are public.", link: { label: "Read the build logs", href: "https://the-cyclopedia.com" } },
+      { tag: "Claude Code · commerce", head: "An agent workspace for an online store", body: "A vegan food consignment store. Channel rules for Naver Smart Store, Coupang and Toss Shopping, product-name checks and pricing rules live in documents the agents read before drafting a listing. Product facts come only from the supplier's official information." },
+    ],
+    rulesTitle: "The same three rules everywhere",
+    rules: [
+      ["Sources first", "Claude works from written sources. A figure that cannot be traced to one is left out."],
+      ["Checks before output", "Guards, tests and a separate checking agent run before anything leaves the machine."],
+      ["A person approves", "Publishing a post, registering a product or changing a price stops for approval first."],
+    ],
     factsTitle: "Company",
-    facts: [["Company", "AI특별시"], ["Representative", "Chan Joo Kim (김찬주)"], ["Established", "6 October 2026"], ["Product", "Enter-AX"], ["Team", "Two people"], ["Based in", "Korea"]],
-    studioTitle: "The studio behind it",
-    studioBody: "Dazzling Studio started as a recording studio, and Chan Joo Kim (김찬주), who leads AI특별시, has run it for seven years. Enter-AX is built by him and one developer.",
+    facts: [["Legal name", "AI특별시"], ["Brand", "Dazzlar"], ["Founder", "Chan Joo Kim (김찬주)"], ["Founded", "6 October 2026"], ["Product", "Enter-AX"], ["Team", "Solo founder"], ["Based in", "Republic of Korea"]],
+    studioTitle: "A company of one, founded in October 2026.",
+    studioBody: "AI특별시 was founded on 6 October 2026 by Chan Joo Kim (김찬주) and builds software under the name Dazzlar. The founder ran a recording studio for seven years before starting the company, which is where the problem behind Enter-AX comes from, and is not a developer by training. The company is one person working with Claude.",
     contactTitle: "Running an agency's casting or training team?",
     contactBody: "We are looking for a small number of agencies to pilot Enter-AX with. Tell us how you take applications and keep trainee records today.",
     representativeLabel: "Representative",
-    footer: "Dazzling Studio",
+    footer: "Dazzlar",
   },
   ko: {
-    nav: { product: "Enter-AX", claude: "Claude", studio: "스튜디오", contact: "문의" },
+    nav: { product: "Enter-AX", claude: "Claude", work: "운영하는 것들", studio: "회사", contact: "문의" },
     switchLabel: "English",
-    eyebrow: "Dazzling Studio · Korea",
-    title: "오디션부터 데뷔까지, 한 사람의 기록을 한곳에.",
-    lede: "Dazzling Studio는 K-pop 기획사를 위한 운영 플랫폼 Enter-AX를 만듭니다. 오디션 지원서에서 시작해 연습생의 월별 평가, 그리고 이제 법이 기획사에 요구하는 청소년 보호 기록까지 한 사람의 기록으로 이어 갑니다.",
+    eyebrow: "Dazzlar · AI특별시 · Korea",
+    title: "Claude 위에서 돌아가는 운영 소프트웨어. 결정은 사람이 합니다.",
+    lede: "Dazzlar는 한국의 1인 소프트웨어 회사입니다. 제품은 K-pop 기획사를 위한 운영 플랫폼 Enter-AX입니다. 오디션 지원서에서 시작해 연습생의 월별 평가, 그리고 이제 법이 기획사에 요구하는 청소년 보호 기록까지 한 사람의 기록으로 이어 갑니다.",
     primaryCta: "무엇을 하는지 보기",
     contactCta: "문의하기",
     productCta: "Enter-AX 열기",
@@ -229,13 +244,27 @@ export const copy = {
       draftTitle: "피드백 초안",
       draft: "지난 두 달 동안 고음이 눈에 띄게 안정되었습니다. 다음 달에는 후렴 구간의 박자를 함께 맞춰 보겠습니다.",
     },
+    workTitle: "매일 Claude로 운영하는 것들.",
+    workLede: "Enter-AX는 Claude API로 Claude가 제품 안에 들어가 있는 곳입니다. 아래는 저희가 Claude Code로 직접 운영하는 사업들입니다. 한 사람이 이만큼을 만들고 굴릴 수 있는 방식이고, 여기서 배운 것은 다시 제품으로 들어갑니다.",
+    work: [
+      { tag: "Claude API · 제품", head: "Enter-AX", body: "제품입니다. Claude가 평가자들이 몇 달간 남긴 의견을 성장 기록과 피드백 초안으로 정리하고, 기획 문서를 목표·리스크·다음 액션으로 나눕니다.", link: { label: "제품 보기", href: "#product" } },
+      { tag: "Claude Code · 발행", head: "the-cyclopedia.com 발행 엔진", body: "AI로 만드는 과정을 기록하는 블로그이고, 직접 만든 엔진으로 발행합니다. 글마다 공개 금지 항목 검사, SEO 점검, 수치를 원본 파일과 대조하는 검증 에이전트를 거칩니다. 워드프레스에는 임시글로 올라가고 발행은 사람이 합니다.", link: { label: "the-cyclopedia.com", href: "https://the-cyclopedia.com" } },
+      { tag: "Claude Code · 미니앱", head: "앱인토스 미니앱", body: "토스 앱 안의 미니앱 플랫폼에 올리는 작은 도구들입니다. 물마시기, 카드값 페이스, 환율 계산기, K패스 환급 계산기 등. 모두 공통 템플릿에서 시작하고, 하네스가 작업에 필요한 파일만 Claude Code에 넘깁니다. 제작기는 공개되어 있습니다.", link: { label: "제작기 읽기", href: "https://the-cyclopedia.com" } },
+      { tag: "Claude Code · 커머스", head: "온라인 스토어 에이전트 작업 공간", body: "비건 식품 위탁판매 스토어입니다. 스마트스토어·쿠팡·토스쇼핑의 채널 규칙, 상품명 검사, 가격 규칙을 문서로 두고 에이전트가 상품 초안을 쓰기 전에 읽습니다. 상품 사실 정보는 공급처 공식 정보만 씁니다." },
+    ],
+    rulesTitle: "어디서나 같은 세 가지 규칙",
+    rules: [
+      ["원본 먼저", "Claude는 적힌 원본을 근거로 일합니다. 원본에서 확인하지 못한 수치는 뺍니다."],
+      ["내보내기 전 점검", "가드, 테스트, 별도의 검증 에이전트가 먼저 돕니다."],
+      ["사람이 승인", "글 발행, 상품 등록, 가격 변경은 승인 앞에서 멈춥니다."],
+    ],
     factsTitle: "회사 정보",
-    facts: [["상호", "AI특별시"], ["대표", "김찬주"], ["설립", "2026년 10월 6일"], ["제품", "Enter-AX"], ["팀", "2명"], ["소재", "대한민국"]],
-    studioTitle: "만드는 사람들",
-    studioBody: "Dazzling Studio는 녹음 스튜디오로 시작했고, AI특별시 대표 김찬주가 7년간 운영해 왔습니다. Enter-AX는 대표와 개발자 한 명이 만듭니다.",
+    facts: [["상호", "AI특별시"], ["브랜드", "Dazzlar"], ["대표", "김찬주"], ["설립", "2026년 10월 6일"], ["제품", "Enter-AX"], ["팀", "1인 창업"], ["소재", "대한민국"]],
+    studioTitle: "2026년 10월에 시작한 1인 회사.",
+    studioBody: "AI특별시는 2026년 10월 6일 김찬주가 설립했고, Dazzlar라는 이름으로 소프트웨어를 만듭니다. 회사를 시작하기 전 7년간 녹음 스튜디오를 운영했고, Enter-AX가 푸는 문제는 거기서 나왔습니다. 개발자 출신이 아닙니다. 회사는 Claude와 함께 일하는 한 사람입니다.",
     contactTitle: "기획사의 캐스팅팀이나 트레이닝팀을 운영하고 계신가요?",
     contactBody: "Enter-AX를 함께 시험할 기획사를 소수로 찾고 있습니다. 지금 지원을 어떻게 받고 연습생 기록을 어떻게 남기는지 알려 주세요.",
     representativeLabel: "대표",
-    footer: "Dazzling Studio",
+    footer: "Dazzlar",
   },
 } as const;

@@ -3,24 +3,24 @@ import type { Metadata, Viewport } from "next";
 import "./globals.css";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || "https://dazzlar.dev";
-const title = "Dazzling Studio | Enter-AX, the operations platform for K-pop agencies";
+const title = "Dazzlar (AI특별시) | Enter-AX, operations software built on Claude";
 const description =
-  "Dazzling Studio builds Enter-AX: one record per person for K-pop agencies, from audition intake to trainee evaluations and the youth-protection log, with Claude organising the record and people making the decisions.";
+  "Dazzlar (AI특별시) is a one-person software company in Korea, founded in October 2026. It builds Enter-AX: one record per person for K-pop agencies, from audition intake to trainee evaluations and the youth-protection log, with Claude organising the record and people making the decisions.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title,
   description,
-  applicationName: "Dazzling Studio",
+  applicationName: "Dazzlar",
   keywords: ["Enter-AX", "K-pop", "entertainment agency", "audition", "trainee management", "youth protection", "Claude", "엔터테인먼트", "오디션", "연습생", "청소년보호책임자"],
-  authors: [{ name: "Dazzling Studio" }],
+  authors: [{ name: "Dazzlar" }],
   alternates: { canonical: "/", languages: { en: "/", ko: "/?lang=ko" } },
   openGraph: {
     title,
     description,
     url: siteUrl,
-    siteName: "Dazzling Studio",
-    images: [{ url: "/og-image.png", width: 1024, height: 1024, alt: "Dazzling Studio" }],
+    siteName: "Dazzlar",
+    images: [{ url: "/og-image.png", width: 1024, height: 1024, alt: "Dazzlar" }],
     type: "website",
   },
   twitter: { card: "summary", title, description, images: ["/og-image.png"] },
@@ -32,8 +32,10 @@ export const viewport: Viewport = { width: "device-width", initialScale: 1, them
 const organization = {
   "@context": "https://schema.org",
   "@type": "Organization",
-  name: "Dazzling Studio",
+  name: "Dazzlar",
+  legalName: "AI특별시",
   alternateName: "AI특별시",
+  foundingDate: "2026-10-06",
   url: siteUrl,
   logo: `${siteUrl}/web_image/share_logo.png`,
   description,
@@ -43,7 +45,7 @@ const organization = {
     "@type": "ContactPoint",
     contactType: "sales",
     telephone: "+82-10-2068-9295",
-    email: "rlackswn2000@gmail.com",
+    email: "chanjoo@dazzlar.dev",
     availableLanguage: ["Korean", "English"],
   },
 };
@@ -55,7 +57,7 @@ const product = {
   applicationCategory: "BusinessApplication",
   operatingSystem: "Web",
   description: "Operations platform for K-pop entertainment agencies: audition intake, review pipeline, trainee records and a youth-protection log.",
-  creator: { "@type": "Organization", name: "Dazzling Studio" },
+  creator: { "@type": "Organization", name: "Dazzlar" },
 };
 
 export default function RootLayout({ children }: Readonly<{ children: React.ReactNode }>) {

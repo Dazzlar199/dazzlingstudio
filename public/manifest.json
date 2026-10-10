@@ -1,7 +1,7 @@
 {
-  "name": "Dazzling Studio",
-  "short_name": "Dazzling Studio",
-  "description": "Dazzling Studio builds Enter-AX, the operations platform for K-pop agencies.",
+  "name": "Dazzlar",
+  "short_name": "Dazzlar",
+  "description": "Dazzlar (AI특별시) builds Enter-AX, operations software for K-pop agencies built on Claude.",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#eef0f4",
