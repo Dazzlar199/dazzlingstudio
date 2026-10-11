@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Dazzlar">
+  <rect width="64" height="64" rx="15" fill="#12141c"/>
+  <path fill="#f4f5f8" fill-rule="evenodd" d="M17 17h13.5C39.6 17 46 23.3 46 32s-6.4 15-15.5 15H17zm8.5 7.6v14.8h4.6c4.3 0 7.3-3 7.3-7.4s-3-7.4-7.3-7.4z"/>
+  <path fill="#e8a22b" d="M49 7l2 5.5 5.5 2-5.5 2-2 5.5-2-5.5-5.5-2 5.5-2z"/>
+</svg>

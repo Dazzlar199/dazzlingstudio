@@ -20,10 +20,10 @@ export const metadata: Metadata = {
     description,
     url: siteUrl,
     siteName: "Dazzlar",
-    images: [{ url: "/og-image.png", width: 1024, height: 1024, alt: "Dazzlar" }],
+    images: [{ url: "/og-image.png", width: 1200, height: 630, alt: "Dazzlar" }],
     type: "website",
   },
-  twitter: { card: "summary", title, description, images: ["/og-image.png"] },
+  twitter: { card: "summary_large_image", title, description, images: ["/og-image.png"] },
   robots: { index: true, follow: true },
 };
 
@@ -37,7 +37,7 @@ const organization = {
   alternateName: "AI특별시",
   foundingDate: "2026-10-06",
   url: siteUrl,
-  logo: `${siteUrl}/web_image/share_logo.png`,
+  logo: `${siteUrl}/logo.png`,
   description,
   address: { "@type": "PostalAddress", addressCountry: "KR" },
   founder: { "@type": "Person", name: "김찬주", alternateName: "Chan Joo Kim" },

@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 
 import { RecordSession } from "@/components/company/RecordSession";
-import { company, contactEmail, copy, kakaoUrl, productUrl, type Lang } from "@/content/company";
+import { apps, company, contactEmail, copy, kakaoUrl, methodLogs, productUrl, type Lang } from "@/content/company";
 
 import "./company.css";
 
@@ -18,13 +18,14 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
         <div className="co">
           <header className="co-nav">
             <Link className="co-nav__brand" href={lang === "ko" ? "/?lang=ko" : "/"}>
-              <span className="co-nav__mark" aria-hidden="true">DZ</span>
+              <Image alt="" className="co-nav__logo" height={32} src="/brand/dazzlar.svg" width={32} />
               {company.brand}
             </Link>
             <nav className="co-nav__links" aria-label={lang === "ko" ? "페이지 내 이동" : "On this page"}>
               <a href="#product">{t.nav.product}</a>
               <a href="#claude">{t.nav.claude}</a>
               <a href="#work">{t.nav.work}</a>
+              <a href="#logs">{t.nav.logs}</a>
               <a href="#studio">{t.nav.studio}</a>
               <a href="#contact">{t.nav.contact}</a>
               <Link className="co-nav__lang" href={lang === "ko" ? "/" : "/?lang=ko"} hrefLang={lang === "ko" ? "en" : "ko"}>{t.switchLabel}</Link>
@@ -39,6 +40,18 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
               <a className="co-btn co-btn--solid" href="#product">{t.primaryCta}</a>
               {productUrl ? <a className="co-btn co-btn--line" href={productUrl}>{t.productCta}</a> : null}
               <a className="co-btn co-btn--line" href={mailto}>{t.contactCta}</a>
+            </div>
+            <div className="co-stack" aria-label={t.stackLabel}>
+              <span className="co-mono">{t.stackLabel}</span>
+              <a className="co-stack__chip" href="#product"><Image alt="" height={28} src="/brand/enter-ax.svg" width={28} />Enter-AX</a>
+              <a className="co-stack__chip" href="#apps">
+                <span className="co-stack__icons">
+                  {apps.slice(0, 5).map((app) => <Image alt="" height={28} key={app.key} src={`/apps/${app.key}-icon.png`} width={28} />)}
+                </span>
+                {t.appsTitle}
+              </a>
+              <a className="co-stack__chip" href="#blog"><i className="co-stack__dot" aria-hidden="true" />the-cyclopedia.com</a>
+              <a className="co-stack__chip" href="#store"><Image alt="" className="co-stack__wide" height={22} src="/brand/happiness.png" width={62} /></a>
             </div>
             <RecordSession caption={t.sessionCaption} lang={lang} range={t.sessionRange} title={t.sessionTitle} todayLabel={t.todayLabel} />
           </section>
@@ -66,7 +79,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
         <section className="co-band co-band--surface" id="product" aria-labelledby="product-title">
           <div className="co">
             <div className="co-headrow">
-              <h2 id="product-title">{t.productTitle}</h2>
+              <h2 className="co-h2logo" id="product-title"><Image alt="" height={64} src="/brand/enter-ax.svg" width={64} />{t.productTitle}</h2>
               <p className="co-status"><i aria-hidden="true" />{t.productStatus}</p>
             </div>
             <div className="co-features">
@@ -140,20 +153,59 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
           <div className="co">
             <h2 id="work-title">{t.workTitle}</h2>
             <p className="co-lede">{t.workLede}</p>
-            <div className="co-work">
-              {t.work.map((item) => (
-                <article className="co-work__card co-reveal" key={item.head}>
-                  <p className="co-mono">{item.tag}</p>
-                  <h3>{item.head}</h3>
-                  <p>{item.body}</p>
-                  {"link" in item ? (
-                    <a href={item.link.href} {...(item.link.href.startsWith("http") ? { rel: "noreferrer", target: "_blank" } : {})}>
-                      {item.link.label} {item.link.href.startsWith("http") ? "↗" : "→"}
+
+            <div className="co-apps" id="apps">
+              <div className="co-apps__head">
+                <div>
+                  <p className="co-mono">{t.appsKicker}</p>
+                  <h3>{t.appsTitle}</h3>
+                  <p>{t.appsBody}</p>
+                </div>
+                <p className="co-mono co-apps__hint" aria-hidden="true">{t.appsHint} →</p>
+              </div>
+              <ul className="co-rail">
+                {apps.map((app) => (
+                  <li className="co-app" key={app.key}>
+                    <a href={app.log} rel="noreferrer" target="_blank">
+                      <span className="co-phone">
+                        <Image alt={`${app.name[lang]} — ${app.line[lang]}`} height={900} sizes="240px" src={`/apps/${app.key}.png`} width={520} />
+                      </span>
+                      <span className="co-app__meta">
+                        <Image alt="" height={40} src={`/apps/${app.key}-icon.png`} width={40} />
+                        <span>
+                          <strong>{app.name[lang]}</strong>
+                          {lang === "en" ? <small lang="ko">{app.name.ko}</small> : null}
+                        </span>
+                      </span>
+                      <span className="co-app__line">{app.line[lang]}</span>
+                      <span className="co-app__cta">{t.logCta} ↗</span>
                     </a>
-                  ) : null}
-                </article>
-              ))}
+                  </li>
+                ))}
+              </ul>
             </div>
+
+            <div className="co-duo">
+              <article className="co-tile co-reveal" id="blog">
+                <div className="co-tile__shot">
+                  <div className="co-shot__bar co-shot__bar--dark" aria-hidden="true"><i /><i /><i /><span>the-cyclopedia.com</span></div>
+                  <Image alt={t.blogTitle} height={900} sizes="(max-width: 860px) 100vw, 560px" src="/work/blog.png" width={1440} />
+                </div>
+                <p className="co-mono">{t.blogKicker}</p>
+                <h3>{t.blogTitle}</h3>
+                <p>{t.blogBody}</p>
+                <a href="https://the-cyclopedia.com" rel="noreferrer" target="_blank">{t.blogCta} ↗</a>
+              </article>
+              <article className="co-tile co-reveal" id="store">
+                <div className="co-tile__shot co-tile__shot--store">
+                  <Image alt={t.storeTitle} height={1400} sizes="(max-width: 860px) 100vw, 560px" src="/work/store.png" width={1400} />
+                </div>
+                <p className="co-mono">{t.storeKicker}</p>
+                <h3>{t.storeTitle}</h3>
+                <p>{t.storeBody}</p>
+              </article>
+            </div>
+
             <div className="co-rules" aria-label={t.rulesTitle}>
               <p className="co-mono">{t.rulesTitle}</p>
               <ol>
@@ -161,6 +213,43 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
                   <li key={head}><strong>{head}</strong><span>{body}</span></li>
                 ))}
               </ol>
+            </div>
+          </div>
+        </section>
+
+        <section className="co-band co-band--surface" id="logs" aria-labelledby="logs-title">
+          <div className="co">
+            <h2 id="logs-title">{t.logsTitle}</h2>
+            <p className="co-lede">{t.logsLede}</p>
+            <div className="co-logs">
+              <div>
+                <p className="co-mono">{t.logsApps}</p>
+                <ol className="co-loglist">
+                  {apps.map((app, index) => (
+                    <li key={app.key}>
+                      <a href={app.log} rel="noreferrer" target="_blank">
+                        <span className="co-loglist__no">{String(index + 1).padStart(2, "0")}</span>
+                        <Image alt="" height={32} src={`/apps/${app.key}-icon.png`} width={32} />
+                        <span className="co-loglist__title">{app.name[lang]}{lang === "en" ? <small lang="ko">{app.name.ko}</small> : null}</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+              <div>
+                <p className="co-mono">{t.logsMethod}</p>
+                <ol className="co-loglist co-loglist--method">
+                  {methodLogs.map((log) => (
+                    <li key={log.href}>
+                      <a href={log.href} rel="noreferrer" target="_blank">
+                        <span className="co-loglist__title">{log.title[lang]}</span>
+                        <span aria-hidden="true">↗</span>
+                      </a>
+                    </li>
+                  ))}
+                </ol>
+              </div>
             </div>
           </div>
         </section>
@@ -201,7 +290,7 @@ export default async function Home({ searchParams }: { searchParams: Promise<{ l
       <footer className="co co-footer">
         <span>© {new Date().getFullYear()} {t.footer} · {company.name} · {t.representativeLabel} {company.representative[lang]}</span>
         <span><a href={`tel:${company.phone.tel}`}>{company.phone.display}</a> · <a href={mailto}>{contactEmail}</a></span>
-        <span>https://dazzlar.dev · Enter-AX is built on the Claude API</span>
+        <span>dazzlar.dev · Built with Claude</span>
       </footer>
     </div>
   );
